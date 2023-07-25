@@ -1,14 +1,33 @@
 import Hero from '@/components/Hero'
+import HowItsDifferent from '@/components/HowItsDifferent'
+import MarketTrust from '@/components/MarketTrust'
 import Navbar from '@/components/Navbar'
+import WhatsTendrs from '@/components/WhatsTendrs'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import { useRef } from 'react'
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export default function Home() {
+  const containerRef = useRef(null)
   return (
-    <main className={plus_jakarta_sans.className + ' dark bg-slate-950'}>
+    // <LocomotiveScrollProvider
+    //   options={{
+    //     smooth: true,
+    //   }}
+    //   containerRef={containerRef}>
+    <main
+      data-scroll-container
+      id='main'
+      ref={containerRef}
+      className={plus_jakarta_sans.className + ' dark bg-slate-950'}>
       <Navbar />
-      <Hero />
+      <Hero data-scroll-section />
+      <MarketTrust data-scroll-section />
+      <WhatsTendrs data-scroll-section />
+      <HowItsDifferent data-scroll-section />
     </main>
+    // </LocomotiveScrollProvider>
   )
 }
