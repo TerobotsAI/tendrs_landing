@@ -15,8 +15,8 @@ export default function Feature1() {
             <div className='w-10 h-1 bg-gray-300 rounded-lg mb-3 mx-auto dark:bg-gray-700/75 lg:mx-0' />
             <h3 className='text-lg leading-relaxed font-medium text-gray-700 lg:w-2/3 mx-auto lg:w-auto lg:mx-0 dark:text-gray-300'>
               We have been working with the biggest companies and delivered over
-              30 high profile projects in the past year. Let's build something
-              together today.
+              30 high profile projects in the past year. Let&apos;s build
+              something together today.
             </h3>
           </div>
           {/* END Heading */}

@@ -6,7 +6,8 @@ export default function HowItsDifferent() {
           <div className=' bg-radial-back relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
             <div className='text-center'>
               <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-slate-100 mb-4'>
-                How it's <span className='text-white/60 block'>Different</span>
+                How it&apos;s{' '}
+                <span className='text-white/60 block'>Different</span>
               </h1>
             </div>
             <div className='flex flex-col md:flex-row gap-5 text-center sm:items-center sm:justify-center pt-10 pb-32'>
