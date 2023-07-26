@@ -1,7 +1,9 @@
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import HowItsDifferent from '@/components/HowItsDifferent'
 import MarketTrust from '@/components/MarketTrust'
 import Navbar from '@/components/Navbar'
+import WhatCanYouDo from '@/components/WhatCanYouDo'
 import WhatsTendrs from '@/components/WhatsTendrs'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { useRef } from 'react'
@@ -27,6 +29,8 @@ export default function Home() {
       <MarketTrust data-scroll-section />
       <WhatsTendrs data-scroll-section />
       <HowItsDifferent data-scroll-section />
+      <WhatCanYouDo />
+      <Footer />
     </main>
     // </LocomotiveScrollProvider>
   )

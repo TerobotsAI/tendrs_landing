@@ -17,7 +17,7 @@ export default function Hero() {
               <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
                 Bringing B2B community all at one place using AI{' '}
               </h1>
-              <h2 className='text-lg font-medium lg:w-2/3 mx-auto text-white/50'>
+              <h2 className='text-lg font-medium lg:w-2/3 mx-auto text-white/90'>
                 Using Tendrs Ai,you can post your requirements & your offerings
                 and AI will help you identify suitable clients & vendors and fix
                 the meetings instantly.
@@ -26,7 +26,7 @@ export default function Hero() {
             <div className='grid grid-cols-1 md:grid-cols-2 text-center max-w-sm mx-auto sm:items-center sm:justify-center gap-3 pt-10 pb-28'>
               <Button size='lg' title='See the magic' />
               <Button size='lg' variant='secondary' title='Learn More' />
-              <p className='text-xs md:col-span-2 text-white/40'>
+              <p className='text-xs md:col-span-2 text-white/70'>
                 <span className='font-bold'>2068</span> People already
                 waitlisted, waiting for you{' '}
               </p>

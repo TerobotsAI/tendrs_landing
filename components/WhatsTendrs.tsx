@@ -14,10 +14,10 @@ export default function WhatsTendrs() {
               <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
                 What is Tendrs Ai?
               </h1>
-              <h2 className='text-lg font-medium lg:w-2/3 mx-auto text-white/50'>
+              <h2 className='text-lg font-medium lg:w-2/3 mx-auto text-white/70'>
                 Tendrs Ai is a very simple & intelligent platform using
                 cognitive intelligence to help businesses identify their clients
-                or vendors with 99.99% accuracy.Its build on 100+ Artificial
+                or vendors with 99.99% accuracy. Its build on 100+ Artificial
                 intellligence models to identify the intents of businesses &
                 find suitable matches to reduce time, cost & effort of growing
                 businesses.
