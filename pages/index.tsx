@@ -1,8 +1,11 @@
+import FAQs from '@/components/FAQs'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import HowItsDifferent from '@/components/HowItsDifferent'
 import MarketTrust from '@/components/MarketTrust'
 import Navbar from '@/components/Navbar'
+import SignUpForm from '@/components/SignUpForm'
+import Stats from '@/components/Stats'
 import WhatCanYouDo from '@/components/WhatCanYouDo'
 import WhatsTendrs from '@/components/WhatsTendrs'
 import { Plus_Jakarta_Sans } from 'next/font/google'
@@ -30,6 +33,9 @@ export default function Home() {
       <WhatsTendrs data-scroll-section />
       <HowItsDifferent data-scroll-section />
       <WhatCanYouDo />
+      <Stats />
+      <FAQs />
+      <SignUpForm />
       <Footer />
     </main>
     // </LocomotiveScrollProvider>

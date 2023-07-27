@@ -1,13 +1,12 @@
-import { SparklesIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import clsx from 'clsx'
-import { group } from 'console'
 
 interface ChipProps {
   title: string
   icon?: React.ReactNode
   group?: boolean
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary'
+  className?: string
 }
 
 function checkVariant(variant: string | undefined) {
@@ -17,16 +16,19 @@ function checkVariant(variant: string | undefined) {
       return 'bg-gradient-to-t from-purple-950 to-slate-950'
     case 'secondary':
       return 'bg-purple-500/20'
+    case 'tertiary':
+      return 'bg-transparent'
   }
 }
 
-const Chip = ({ title, icon, group, variant }: ChipProps) => {
+const Chip = ({ title, icon, group, variant, className }: ChipProps) => {
   return (
     <div
       className={clsx(
         'text-sm rounded-full flex justify-center items-center gap-2 border border-purple-500 px-4 py-2 leading-4 w-fit',
         checkVariant(variant),
-        group ? '' : 'mx-auto mb-2'
+        group ? '' : 'mx-auto mb-2',
+        className
       )}>
       {icon}
       {title}
