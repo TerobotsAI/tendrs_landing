@@ -6,9 +6,12 @@ export default function SignUpForm() {
   return (
     <>
       <div className='dark'>
-        <div className='relative overflow-hidden bg-radial-gradient from-purple-900 via-purple-950/50  to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+        <div className='relative overflow-hidden bg-purple-800 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+          <div className='absolute inset-0'>
+            <div className='relative bg-grid w-full h-full after:absolute after:inset-0 after:bg-radial-gradient after:from-purple-900 after:via-slate-950/80 after:to-slate-950 after:mix-blend-multiply'></div>
+          </div>
           <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-40 pb-10'>
-            <div className='text-center'>
+            <div className='text-center z-100'>
               <Chip
                 icon={<SparklesIcon className='w-5 h-5 text-white' />}
                 title='New: B2B through AI'

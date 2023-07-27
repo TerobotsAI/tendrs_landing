@@ -20,7 +20,8 @@ export default {
     extend: {
       backgroundImage: {
         'radial-border': 'radial-gradient(#F9FAFB 0%, transparent 60%)',
-        'radial-gradient': 'radial-gradient(var(--tw-gradient-stops))',
+        'radial-gradient':
+          'radial-gradient(circle at center, var(--tw-gradient-stops))',
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
