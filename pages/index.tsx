@@ -1,13 +1,13 @@
 import FAQs from '@/components/FAQs'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
-import HowItsDifferent from '@/components/HowItsDifferent'
-import MarketTrust from '@/components/MarketTrust'
+import Differences from '@/components/Differences'
+import Banner from '@/components/Banner'
 import Navbar from '@/components/Navbar'
 import SignUpForm from '@/components/SignUpForm'
 import Stats from '@/components/Stats'
-import WhatCanYouDo from '@/components/WhatCanYouDo'
-import WhatsTendrs from '@/components/WhatsTendrs'
+import Features from '@/components/Features'
+import About from '@/components/About'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { useRef } from 'react'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
@@ -29,10 +29,10 @@ export default function Home() {
       className={plus_jakarta_sans.className + ' dark bg-slate-950'}>
       <Navbar />
       <Hero data-scroll-section />
-      <MarketTrust data-scroll-section />
-      <WhatsTendrs data-scroll-section />
-      <HowItsDifferent data-scroll-section />
-      <WhatCanYouDo />
+      <Banner data-scroll-section />
+      <About data-scroll-section />
+      <Differences data-scroll-section />
+      <Features />
       <Stats />
       <FAQs />
       <SignUpForm />

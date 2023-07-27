@@ -23,7 +23,7 @@ export default function Hero() {
                 the meetings instantly.
               </h2>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 text-center max-w-sm mx-auto sm:items-center sm:justify-center gap-3 pt-10 pb-28'>
+            <div className='grid grid-cols-1 md:grid-cols-2 text-center max-w-sm mx-auto sm:items-center sm:justify-center gap-3 mt-10 py-10'>
               <Button size='lg' title='See the magic' />
               <Button size='lg' variant='secondary' title='Learn More' />
               <p className='text-xs md:col-span-2 text-white/70'>
@@ -32,7 +32,7 @@ export default function Hero() {
               </p>
             </div>
           </div>
-          <div className='flex justify-around gap-5 pb-10'>
+          <div className='flex justify-around gap-5'>
             <div className='relative bg-grid h-[200px] md:h-[400px] w-[200px] md:w-[400px] rotate-45 after:absolute after:inset-0 after:bg-gradient-to-l after:from-purple-950 after:to-transparent after:bg-blend-multiply'></div>
             {/* <div className='bg-circles h-[100px] w-[300px]'></div> */}
             <div className='relative bg-grid h-[200px] md:h-[400px] w-[200px] md:w-[400px] rotate-45 after:absolute after:inset-0 after:bg-gradient-to-l after:from-purple-950 after:to-transparent after:bg-blend-multiply'></div>

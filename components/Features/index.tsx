@@ -3,12 +3,12 @@ import {
   SparklesIcon,
   XCircleIcon,
 } from '@heroicons/react/24/solid'
-import Chip from './Base/Chip'
-import Feature1 from './Features/Feature1'
-import Feature2 from './Features/Feature2'
-import Feature3 from './Features/Feature3'
+import Chip from '../Base/Chip'
+import Feature1 from './Feature1'
+import Feature2 from './Feature2'
+import Feature3 from './Feature3'
 
-export default function WhatCanYouDo() {
+export default function Features() {
   return (
     <>
       <div className='dark'>

@@ -1,7 +1,7 @@
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import Chip from './Base/Chip'
 
-export default function MarketTrust() {
+export default function Banner() {
   return (
     <>
       <div className='dark'>

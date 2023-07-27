@@ -1,4 +1,4 @@
-export default function HowItsDifferent() {
+export default function Differences() {
   return (
     <>
       <div className='dark'>

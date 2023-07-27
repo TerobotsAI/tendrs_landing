@@ -2,7 +2,7 @@ import { SparklesIcon } from '@heroicons/react/24/solid'
 import Button from './Base/Button'
 import Chip from './Base/Chip'
 
-export default function WhatsTendrs() {
+export default function About() {
   return (
     <>
       <div className='dark'>
