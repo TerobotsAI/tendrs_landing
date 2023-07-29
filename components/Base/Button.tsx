@@ -5,6 +5,8 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary'
   size?: 'sm' | 'lg'
   className?: string
+  type?: 'submit' | 'button'
+  icon?: React.ReactNode
 }
 
 function checkVariant(variant: string | undefined) {
@@ -27,17 +29,25 @@ function checkSize(size: string | undefined) {
   }
 }
 
-const Button = ({ title, variant, size, className }: ButtonProps) => {
+const Button = ({
+  title,
+  variant,
+  size,
+  className,
+  type,
+  icon,
+}: ButtonProps) => {
   return (
     <button
-      type='button'
+      type={type || 'button'}
       className={clsx(
-        'inline-flex justify-center items-center space-x-2 border font-semibold rounded-md leading-6',
+        className,
+        'inline-flex justify-center items-center gap-2 border font-semibold rounded-md leading-6',
         checkVariant(variant),
-        checkSize(size),
-        className
+        checkSize(size)
       )}>
       {title}
+      {icon}
     </button>
   )
 }

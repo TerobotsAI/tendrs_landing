@@ -1,8 +1,45 @@
-import { SparklesIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, SparklesIcon } from '@heroicons/react/24/solid'
 import Button from './Base/Button'
 import Chip from './Base/Chip'
-
+import { useState } from 'react'
+import { collection, addDoc, doc } from 'firebase/firestore'
+import { db } from '../lib/firebase'
+import { ClipLoader } from 'react-spinners'
 export default function SignUpForm() {
+  const [loading, setLoading] = useState(false)
+  const [buttonText, setButtonText] = useState('Join Waitlist!')
+
+  function handleSubmit(e: any) {
+    setLoading(true)
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    if (!formData.get('email') || !formData.get('name')) {
+      alert('Please fill in your name and email')
+      setLoading(false)
+      return
+    }
+    const data = Object.fromEntries(formData)
+    data.timestamp = new Date().toLocaleString()
+
+    console.log(data)
+
+    addDoc(collection(db, 'customers'), data)
+      .then((docRef) => {
+        console.log('Document written with ID: ', docRef.id)
+        e.target.reset()
+      })
+      .catch((error) => {
+        console.error('Error adding document: ', error)
+      })
+      .finally(() => {
+        setLoading(false)
+        setButtonText('Joined!')
+      })
+
+    setTimeout(() => {
+      setButtonText('Join Waitlist!')
+    }, 1000)
+  }
   return (
     <>
       <div className='dark'>
@@ -22,7 +59,21 @@ export default function SignUpForm() {
                 The future of your Businesses starts here!{' '}
               </h1>
             </div>
-            <div className='flex flex-col text-center max-w-sm mx-auto sm:items-center sm:justify-stretch gap-3 py-10'>
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className='flex flex-col text-center max-w-sm mx-auto sm:items-center sm:justify-stretch gap-3 py-10'>
+              <div className='space-y-1 text-left w-full'>
+                <label htmlFor='email' className='font-medium text-sm'>
+                  Your Name
+                </label>
+                <input
+                  type='text'
+                  id='name'
+                  name='name'
+                  placeholder='John Doe'
+                  className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                />
+              </div>
               <div className='space-y-1 text-left w-full'>
                 <label htmlFor='email' className='font-medium text-sm'>
                   Your Email
@@ -31,20 +82,29 @@ export default function SignUpForm() {
                   type='email'
                   id='email'
                   name='email'
-                  placeholder='Enter your email'
-                  className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-white/10 dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-gray-400'
+                  placeholder='email@company.com'
+                  className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                 />
               </div>
+
               <Button
                 className='w-full mt-5 bg-purple-950'
                 size='lg'
                 variant='primary'
-                title='Join Waitlist!'
+                title={buttonText}
+                type='submit'
+                icon={
+                  buttonText === 'Joined!' ? (
+                    <CheckCircleIcon className='w-5 h-5 text-white' />
+                  ) : (
+                    <ClipLoader color='white' loading={loading} size={20} />
+                  )
+                }
               />
               <p className='text-sm md:col-span-2 text-white/70'>
                 No Spam, No Data Sharing. Your Privacy is our priority.
               </p>
-            </div>
+            </form>
           </div>
         </div>
       </div>
