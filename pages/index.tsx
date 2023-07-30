@@ -26,7 +26,9 @@ export default function Home() {
       data-scroll-container
       id='main'
       ref={containerRef}
-      className={plus_jakarta_sans.className + ' dark bg-slate-950'}>
+      className={
+        plus_jakarta_sans.className + ' dark bg-slate-950 scroll-smooth'
+      }>
       <Navbar />
       <Hero data-scroll-section />
       <Banner data-scroll-section />

@@ -1,5 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
+// import link from 'next/link'
+import Link from 'next/link'
 interface ButtonProps {
   title: string
   variant?: 'primary' | 'secondary'
@@ -7,6 +9,7 @@ interface ButtonProps {
   className?: string
   type?: 'submit' | 'button'
   icon?: React.ReactNode
+  link?: string
   onClick?: () => void
 }
 
@@ -36,20 +39,24 @@ const Button = ({
   size,
   className,
   icon,
+  link,
   ...props
 }: ButtonProps) => {
+  const Tag = link ? 'a' : 'button'
+
   return (
-    <button
+    <Tag
       className={clsx(
         className,
         'inline-flex justify-center items-center gap-2 border font-semibold rounded-md leading-6',
         checkVariant(variant),
         checkSize(size)
       )}
+      href={link}
       {...props}>
       {title}
       {icon}
-    </button>
+    </Tag>
   )
 }
 

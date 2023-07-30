@@ -35,12 +35,8 @@ export default function Navbar() {
   return (
     <>
       {/* Main Header Section: Simple with Actions Alternate */}
-      <div
-        className='sticky top-0 z-10'
-        data-scroll-sticky
-        data-scroll-target='#main'
-        data-scroll>
-        <div className='relative overflow-hidden text-gray-100 bg-slate-950/60 backdrop-blur-lg after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+      <div className='sticky top-0 z-10'>
+        <div className='text-gray-100 bg-slate-950/60 backdrop-blur-lg after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
           {/* Main Header */}
           <header
             id='page-header'
@@ -76,7 +72,11 @@ export default function Navbar() {
               <div className='flex items-center'>
                 {/* Actions */}
                 <div className='flex items-center justify-center gap-2'>
-                  <Button size='sm' title='Join the waitlist' />
+                  <Button
+                    size='sm'
+                    title='Join the waitlist'
+                    link='#waitlist-form'
+                  />
                 </div>
                 {/* END Actions */}
                 {/* Open Mobile Navigation */}
@@ -117,7 +117,7 @@ export default function Navbar() {
               leaveTo='opacity-0 scale-50'>
               <nav
                 id='tkMobileNav'
-                className='fixed inset-0 max-h-[400px] m-4 rounded-lg z-50 overflow-auto origin-top-right bg-white/95 shadow-lg sm:container sm:mx-auto lg:hidden dark:bg-slate-950'
+                className='absolute inset-0 h-max m-4 rounded-lg z-50 overflow-auto origin-top-right bg-white/95 shadow-lg sm:container sm:mx-auto lg:hidden dark:bg-slate-950'
                 tabIndex={-1}
                 aria-labelledby='tkMobileNavLabel'
                 aria-modal='true'
@@ -166,7 +166,12 @@ export default function Navbar() {
                 </nav>
                 <div className='h-px bg-gray-200/75 dark:bg-gray-700/75' />
                 <div className='flex flex-col gap-2 p-6 sm:flex-row'>
-                  <Button size='sm' title='Join the waitlist' />
+                  <Button
+                    size='sm'
+                    link='#waitlist-form'
+                    title='Join the waitlist'
+                    onClick={() => setMobileNavOpen(false)}
+                  />
                 </div>
               </nav>
             </Transition>
@@ -183,7 +188,7 @@ export default function Navbar() {
               leaveTo='opacity-0'>
               <div
                 onClick={() => setMobileNavOpen(false)}
-                className='fixed inset-0 z-40 bg-gray-900 bg-opacity-20 backdrop-blur-sm will-change-auto dark:bg-opacity-80 lg:hidden'
+                className='absolute inset-0 h-screen z-40 bg-gray-900 bg-opacity-20 backdrop-blur-sm will-change-auto dark:bg-opacity-80 lg:hidden'
               />
             </Transition>
             {/* END Mobile Navigation Backdrop */}
