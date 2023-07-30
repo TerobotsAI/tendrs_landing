@@ -2,19 +2,63 @@ import { Fragment, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import FormDropdown from './Dropdown'
 import Button from '../Base/Button'
+import { ClipLoader } from 'react-spinners'
 
 interface ModalProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
 }
+export interface Option {
+  title: string
+  value: string
+}
+const interestedOptions: Option[] = [
+  {
+    title:
+      'Provider - Corporation, Financial Services, Government Agency seeking Minority-Owned/Diverse Companies for Products, Projects, Capital Funding and/or Mentoring opportunities.',
+    value: 'Provider',
+  },
+  {
+    title:
+      'Seeker - Minority-Owned/Diverse Business or Organization seeking opportunities (Supplier opportunities, Access to Capital/Funding, Mentors, Sponsors and/or Professional Advice).',
+    value: 'Seeker',
+  },
+]
 
+const typeOptions: Option[] = [
+  {
+    title: 'Diverse Business',
+    value: 'Diverse Business',
+  },
+  {
+    title: 'Corporation',
+    value: 'Corporation',
+  },
+  {
+    title: 'Financial Services',
+    value: 'Financial Services',
+  },
+  {
+    title: 'Non-Profit',
+    value: 'Non-Profit',
+  },
+  {
+    title: 'Government Agencies, Public Entity',
+    value: 'Government Agencies, Public Entity',
+  },
+  {
+    title: 'Other',
+    value: 'Other',
+  },
+]
 export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Join the Waitlist!')
-
+  const [interested, setInterested] = useState<Option>(interestedOptions[0])
+  const [type, setType] = useState<Option>(typeOptions[0])
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -26,6 +70,8 @@ export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
     }
     const data = Object.fromEntries(formData)
     data.timestamp = new Date().toLocaleString()
+    data.interest = interested.value
+    data.type = type.value
 
     console.log(data)
 
@@ -40,6 +86,9 @@ export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
       .finally(() => {
         setLoading(false)
         setButtonText('Joined!')
+        setTimeout(() => {
+          setIsOpen(false)
+        }, 300)
       })
 
     setTimeout(() => {
@@ -81,7 +130,7 @@ export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
                 leave='ease-in duration-100'
                 leaveFrom='opacity-100 scale-100'
                 leaveTo='opacity-0 scale-125'>
-                <Dialog.Panel className='relative pt-4 w-full max-w-3xl mx-auto flex flex-col rounded-lg shadow-sm text-gray-100 bg-slate-800'>
+                <Dialog.Panel className='relative pt-4 w-full max-w-xl mx-auto flex flex-col rounded-lg shadow-sm text-gray-100 bg-slate-800'>
                   <button
                     onClick={() => {
                       setIsOpen(false)
@@ -91,7 +140,9 @@ export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
                     <XMarkIcon className='w-4 h-4 ' />
                   </button>
                   {/* coded here */}
-                  <form className='grid grid-cols-1 md:grid-cols-2 items-end gap-6 p-4'>
+                  <form
+                    onSubmit={handleSubmit}
+                    className='flex flex-col items-end gap-6 p-4'>
                     <div className='space-y-1 text-left w-full'>
                       <label htmlFor='email' className='font-medium text-sm'>
                         Your Name
@@ -118,30 +169,34 @@ export default function FormModal({ isOpen, setIsOpen }: ModalProps) {
                     </div>
                     <FormDropdown
                       title='Are you interested in providing or seeking opportunities?'
-                      options={[
-                        'Provider - Corporation, Financial Services, Government Agency seeking Minority-Owned/Diverse Companies for Products, Projects, Capital Funding and/or Mentoring opportunities.',
-                        'Seeker - Minority-Owned/Diverse Business or Organization seeking opportunities (Supplier opportunities, Access to Capital/Funding, Mentors, Sponsors and/or Professional Advice).',
-                      ]}
+                      options={interestedOptions}
+                      setSelected={setInterested}
+                      selected={interested}
                     />
                     <FormDropdown
                       title='Which of the following best describes you today?'
-                      options={[
-                        'Diverse Business',
-                        'Corporation',
-                        'Financial Services',
-                        'Non-Profit',
-                        'Government Agencies, Public Entity',
-                        'Other',
-                      ]}
+                      options={typeOptions}
+                      setSelected={setType}
+                      selected={type}
                     />
 
                     <Button
                       className='w-full mt-5 bg-purple-950'
                       size='lg'
                       variant='primary'
-                      title={'Join the Waitlist!'}
+                      title={buttonText}
+                      icon={
+                        buttonText === 'Joined!' ? (
+                          <CheckCircleIcon className='w-5 h-5 text-white' />
+                        ) : (
+                          <ClipLoader
+                            color='white'
+                            loading={loading}
+                            size={20}
+                          />
+                        )
+                      }
                       type='submit'
-                      onClick={() => setIsOpen(true)}
                     />
                   </form>
                 </Dialog.Panel>

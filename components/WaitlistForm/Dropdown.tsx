@@ -1,22 +1,30 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Option } from './FormModal'
 
 interface FormDropdownProps {
   title: string
-  options: string[]
+  options: Option[]
+  selected: Option
+  setSelected: (value: Option) => void
 }
 
-export default function FormDropdown({ title, options }: FormDropdownProps) {
-  const [selected, setSelected] = useState<string>(options[0])
+export default function FormDropdown({
+  title,
+  options,
+  selected,
+  setSelected,
+}: FormDropdownProps) {
+  // const [selected, setSelected] = useState<string>(options[0])
 
   return (
     <>
-      <Listbox value={selected} onChange={setSelected}>
-        <div className='relative mt-1 flex flex-col gap-1.5'>
+      <Listbox as={Fragment} value={selected} onChange={setSelected}>
+        <div className='relative mt-1 flex flex-col gap-1.5 w-full'>
           <Listbox.Label className='font-medium text-sm'>{title}</Listbox.Label>
           <Listbox.Button className='relative w-full cursor-default px-3 py-4 pr-10 text-left sm:text-sm  block border leading-6 rounded-lg focus:ring focus:ring-purple-500 focus:ring-opacity-50 bg-[#17063B] border-purple-500 focus:border-purple-500 placeholder-slate-400'>
-            <span className='block truncate'>{selected}</span>
+            <span className='block truncate'>{selected.title}</span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <ChevronUpDownIcon
                 className='h-5 w-5 text-gray-400'
@@ -38,14 +46,14 @@ export default function FormDropdown({ title, options }: FormDropdownProps) {
                       active ? 'bg-purple-800/70 text-purple-100' : 'text-white'
                     }`
                   }
-                  value={option}>
+                  value={option.value}>
                   {({ selected }) => (
                     <>
                       <span
                         className={`block truncate ${
                           selected ? 'font-medium' : 'font-normal'
                         }`}>
-                        {option}
+                        {option.title}
                       </span>
                       {selected ? (
                         <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-purple-400'>

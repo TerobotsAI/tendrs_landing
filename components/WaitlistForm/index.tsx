@@ -13,41 +13,10 @@ export default function WaitlistForm() {
 
   const [modalOpen, setModalOpen] = useState(false)
 
-  function handleSubmit(e: any) {
-    setLoading(true)
-    e.preventDefault()
-    const formData = new FormData(e.target)
-    if (!formData.get('email') || !formData.get('name')) {
-      alert('Please fill in your name and email')
-      setLoading(false)
-      return
-    }
-    const data = Object.fromEntries(formData)
-    data.timestamp = new Date().toLocaleString()
-
-    console.log(data)
-
-    addDoc(collection(db, 'customers'), data)
-      .then((docRef) => {
-        console.log('Document written with ID: ', docRef.id)
-        e.target.reset()
-      })
-      .catch((error) => {
-        console.error('Error adding document: ', error)
-      })
-      .finally(() => {
-        setLoading(false)
-        setButtonText('Joined!')
-      })
-
-    setTimeout(() => {
-      setButtonText('Join the Waitlist!')
-    }, 1000)
-  }
   return (
     <>
       <FormModal isOpen={modalOpen} setIsOpen={setModalOpen} />
-      <div className='dark'>
+      <div className='dark' id='waitlist-form'>
         <div className='relative overflow-hidden bg-purple-800 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
           <div className='absolute inset-0'>
             <div className='relative bg-grid w-full h-full after:absolute after:inset-0 after:bg-radial-gradient after:from-purple-900 after:via-slate-950/80 after:to-slate-950 after:mix-blend-multiply'></div>
@@ -56,7 +25,7 @@ export default function WaitlistForm() {
             <div className='text-center z-100'>
               <Chip
                 icon={<SparklesIcon className='w-5 h-5 text-white' />}
-                title='New: B2B through AI'
+                title='B2B through AI'
                 variant='secondary'
               />
 
