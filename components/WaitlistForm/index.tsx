@@ -1,13 +1,17 @@
 import { CheckCircleIcon, SparklesIcon } from '@heroicons/react/24/solid'
-import Button from './Base/Button'
-import Chip from './Base/Chip'
+import Button from '../Base/Button'
+import Chip from '../Base/Chip'
 import { useState } from 'react'
 import { collection, addDoc, doc } from 'firebase/firestore'
-import { db } from '../lib/firebase'
+import { db } from '../../lib/firebase'
 import { ClipLoader } from 'react-spinners'
-export default function SignUpForm() {
+import FormModal from './FormModal'
+
+export default function WaitlistForm() {
   const [loading, setLoading] = useState(false)
-  const [buttonText, setButtonText] = useState('Join Waitlist!')
+  const [buttonText, setButtonText] = useState('Join the Waitlist!')
+
+  const [modalOpen, setModalOpen] = useState(false)
 
   function handleSubmit(e: any) {
     setLoading(true)
@@ -37,11 +41,12 @@ export default function SignUpForm() {
       })
 
     setTimeout(() => {
-      setButtonText('Join Waitlist!')
+      setButtonText('Join the Waitlist!')
     }, 1000)
   }
   return (
     <>
+      <FormModal isOpen={modalOpen} setIsOpen={setModalOpen} />
       <div className='dark'>
         <div className='relative overflow-hidden bg-purple-800 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
           <div className='absolute inset-0'>
@@ -59,40 +64,14 @@ export default function SignUpForm() {
                 The future of your Businesses starts here!{' '}
               </h1>
             </div>
-            <form
-              onSubmit={(e) => handleSubmit(e)}
-              className='flex flex-col text-center max-w-sm mx-auto sm:items-center sm:justify-stretch gap-3 py-10'>
-              <div className='space-y-1 text-left w-full'>
-                <label htmlFor='email' className='font-medium text-sm'>
-                  Your Name
-                </label>
-                <input
-                  type='text'
-                  id='name'
-                  name='name'
-                  placeholder='John Doe'
-                  className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                />
-              </div>
-              <div className='space-y-1 text-left w-full'>
-                <label htmlFor='email' className='font-medium text-sm'>
-                  Your Email
-                </label>
-                <input
-                  type='email'
-                  id='email'
-                  name='email'
-                  placeholder='email@company.com'
-                  className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                />
-              </div>
-
+            <div className='flex flex-col text-center max-w-sm mx-auto sm:items-center sm:justify-stretch gap-3 py-10'>
               <Button
                 className='w-full mt-5 bg-purple-950'
                 size='lg'
                 variant='primary'
                 title={buttonText}
                 type='submit'
+                onClick={() => setModalOpen(true)}
                 icon={
                   buttonText === 'Joined!' ? (
                     <CheckCircleIcon className='w-5 h-5 text-white' />
@@ -104,7 +83,7 @@ export default function SignUpForm() {
               <p className='text-sm md:col-span-2 text-white/70'>
                 No Spam, No Data Sharing. Your Privacy is our priority.
               </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Hero from '@/components/Hero'
 import Differences from '@/components/Differences'
 import Banner from '@/components/Banner'
 import Navbar from '@/components/Navbar'
-import SignUpForm from '@/components/SignUpForm'
+import WaitlistForm from '@/components/WaitlistForm'
 import Stats from '@/components/Stats'
 import Features from '@/components/Features'
 import About from '@/components/About'
@@ -35,7 +35,7 @@ export default function Home() {
       <Features />
       <Stats />
       <FAQs />
-      <SignUpForm />
+      <WaitlistForm />
       <Footer />
     </main>
     // </LocomotiveScrollProvider>
