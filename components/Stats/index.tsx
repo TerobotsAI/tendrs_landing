@@ -2,28 +2,28 @@ import StatCard from './StatCard'
 
 const nums = [
   {
-    title: 'Sales',
-    value: 87,
+    title: 'Reduction in sales costs',
+    value: '85%',
   },
   {
-    title: 'Earnings',
-    value: 4570,
+    title: 'Faster growth in businesses',
+    value: '20X',
   },
   {
-    title: 'Wallet',
-    value: 27910,
+    title: 'Increase in prospects & client base',
+    value: '95%',
   },
   {
-    title: 'Sales',
-    value: 87,
+    title: 'Accuracy in matchmaking',
+    value: '99%',
   },
   {
-    title: 'Sales',
-    value: 87,
+    title: 'Improvement in confidentiality & deal breaking',
+    value: '75%',
   },
   {
-    title: 'Sales',
-    value: 87,
+    title: 'Reduction of fraud & fake companies',
+    value: '100%',
   },
 ]
 

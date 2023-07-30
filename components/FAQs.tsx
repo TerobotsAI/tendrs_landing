@@ -2,29 +2,31 @@ import Chip from './Base/Chip'
 
 const questions = [
   {
-    question: 'What features are included?',
+    question:
+      'We are using linkedin sales navigator to find our clients, how is Tendrs different than that?',
     answer:
-      'Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.',
+      'In linkedin you need to post inmail messages to random people with or without knowing what they are looking for, in this you are spending more than 80% of cost to identify the right potential lead. With Tendrs, since every profile will have list of requirements &amp;amp; offerings matches made by AI will be 99.99% accurate and chances of closing deals are very high.',
   },
   {
-    question: 'What features are included?',
+    question: 'How is it different to google search?',
     answer:
-      'Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.',
+      'In google search you will find a list of websites and you have to spend more time in identifying the contact, sending a mail with details &amp;amp; they will take time in researching about your credibility and then reply you to fix a meeting, this takes a lot of time in converting a lead. In Tendrs, you can add all your possible details and AI will help you match with right clients and sets up a meeting where you need to discuss the deals and pricing to close it. Moreover, In tendrs, you will be interacting with People who represent the businesses directly.',
   },
   {
-    question: 'What features are included?',
+    question: 'Is my personal info safe with Tendrs?',
     answer:
-      'Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.',
+      "It's 100% safe, No contact number or mail id would be shared with anyone, you will be getting only meeting requests which you need to accept or reject. Also, you can keep your profile offline to stop receiving any meeting requests.",
   },
   {
-    question: 'What features are included?',
+    question: 'Which teams &amp;amp; businesses can use it?',
     answer:
-      'Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.',
+      'Every business can use Tendrs, no need to spend a high price for purchasing Sales tools, CRM, or having a big sales team to start a Business. If you have a company registered you can start using Tendrs to identify clients and start sending your proposals instantly. This platform is for every B2B businesses.',
   },
   {
-    question: 'What features are included?',
+    question:
+      'Can startups &amp;amp; investors also be part of this Tendr platform?',
     answer:
-      'Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque.',
+      "Yes, everyone can be part of this platform. We haven't built the models to match investors &amp;amp; startups yet. Soon we will be launching the same.",
   },
 ]
 
