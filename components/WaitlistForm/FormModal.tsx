@@ -2,11 +2,12 @@ import { Fragment, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import { Dialog, Transition } from '@headlessui/react'
-import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, PaperClipIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import FormDropdown from './Dropdown'
 import Button from '../Base/Button'
 import { ClipLoader } from 'react-spinners'
 import { atom, useAtom } from 'jotai'
+import Image from 'next/image'
 
 export const WaitlistFormAtom = atom(0)
 
@@ -97,9 +98,7 @@ export default function FormModal() {
         setLoading(false)
         setButtonText("We'll send the matches soon to your inbox!")
         setWaitlistForm(2)
-        setTimeout(() => {
-          setWaitlistForm(0)
-        }, 600)
+
       })
 
     setTimeout(() => {
@@ -111,7 +110,7 @@ export default function FormModal() {
       {/* Modals: With Form */}
       <div>
         {/* Modal Container */}
-        <Transition appear show={waitlistForm == 1} as={Fragment}>
+        <Transition appear show={waitlistForm == 1 || waitlistForm == 2} as={Fragment}>
           <Dialog
             as='div'
             className='relative z-90 dark'
@@ -152,118 +151,188 @@ export default function FormModal() {
                   </button>
                   {/* coded here */}
                   {/* Share this  */}
-                  <form
-                    onSubmit={handleSubmit}
-                    className='grid grid-cols-1 md:grid-cols-2 items-end gap-6 p-4'>
-                    <div className='space-y-1 text-left w-full'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        Your Name
-                      </label>
-                      <input
-                        type='text'
-                        id='name'
-                        name='name'
-                        placeholder='John Doe'
-                        className='w-full block border px-3 py-4 leading-6 rounded-lg focus:ring focus:ring-purple-500 focus:ring-opacity-50 bg-[#17063B] border-purple-500 focus:border-purple-500 placeholder-slate-400'
-                      />
-                    </div>
-                    <div className='space-y-1 text-left w-full'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        Your Email
-                      </label>
-                      <input
-                        type='email'
-                        id='email'
-                        name='email'
-                        placeholder='email@company.com'
-                        className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                      />
-                    </div>
-                    <div className='space-y-1 text-left w-full'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        No. of Employees
-                      </label>
-                      <input
-                        type='number'
-                        id='employee'
-                        name='employee'
-                        placeholder='XX'
-                        min={1}
-                        max={1000000}
-                        className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                      />
-                    </div>
-                    <div className='space-y-1 text-left w-full'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        Phone Number
-                      </label>
-                      <input
-                        type='number'
-                        id='phone'
-                        name='phone'
-                        placeholder='XXX-XXX-XXXX'
-                        min={1}
-                        className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                      />
-                    </div>
-                    <FormDropdown
-                      title='Type of Business'
-                      options={businessOptions}
-                      setSelected={setBusiness}
-                      selected={business}
-                    />
-                    <FormDropdown
-                      title='Select your industry'
-                      options={industryOptions}
-                      setSelected={setIndustry}
-                      selected={industry}
-                    />
-                    <div className='space-y-1 text-left w-full md:col-span-2'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        What services/product you offer?
-                      </label>
-                      <textarea
-                        id='providing'
-                        name='provides'
-                        rows={3}
-                        placeholder='We offer digital marketing services for SaaS based companies, automation services, VC for startups, operations management software for alerts and issue management etc...  #finance #marketing #saas #automation'
-                        className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                      />
-                    </div>
-                    <div className='space-y-1 text-left w-full md:col-span-2'>
-                      <label htmlFor='email' className='font-medium text-sm'>
-                        What are your business requirements?
-                      </label>
-                      <textarea
-                        id='seeking'
-                        name='seeks'
-                        rows={3}
-                        placeholder='Looking for SaaS Companies, Digital Marketing Agency, Automation, Financal Services, VC Firms etc... 
+
+                  {
+                    waitlistForm == 2 ? (
+
+                      <>
+                        <div className="space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32">
+                          {/* Heading */}
+                          <div className="text-center">
+                            <Image
+                              src='/LogoIcon.svg'
+                              width={100}
+                              height={100}
+                              alt='Tendrs Logo'
+                              className='mx-auto h-10 w-10 mb-5'
+                            />
+
+
+                            <h2 className="text-4xl font-black mb-4 dark:text-white">
+                              Share this with your friends and colleagues
+                            </h2>
+                            <h3 className="text-xl font-medium leading-relaxed text-gray-800 mx-auto dark:text-gray-300">
+                              We are on a mission to help 1 million businesses grow by 2025. Help us reach our goal by sharing Tendrs with your friends and colleagues.
+                            </h3>
+                          </div>
+                          {/* END Heading */}
+
+                          {/* Values with Icons */}
+                          <div className="grid grid-cols-3 gap-8 rounded-lg border text-center p-8 w-fit mx-auto dark:border-gray-700/75">
+
+                            <div className="space-y-4 text-center">
+
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
+                                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
+                              </svg>
+                              <h3 className="font-medium">
+                                Whatsapp
+                              </h3>
+                            </div>
+                            <div className="space-y-4">
+                              <svg xmlns="http://www.w3.org/2000/svg"
+
+                                className="w-8 h-8 mx-auto transition hover:text-blue-600"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                                <path d="M8 11l0 5"></path>
+                                <path d="M8 8l0 .01"></path>
+                                <path d="M12 16l0 -5"></path>
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                              </svg>
+                              <h3 className="font-medium">
+                                LinkedIn
+                              </h3>
+                            </div>
+                            <div className="space-y-4">
+                              <PaperClipIcon className="w-8 h-8 mx-auto transition hover:text-amber-600" />
+
+                              <h3 className="font-medium">
+                                Copy Link
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+
+                    ) :
+                      (
+                        <form
+                          onSubmit={handleSubmit}
+                          className='grid grid-cols-1 md:grid-cols-2 items-end gap-6 p-4'>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              Your Name
+                            </label>
+                            <input
+                              type='text'
+                              id='name'
+                              name='name'
+                              placeholder='John Doe'
+                              className='w-full block border px-3 py-4 leading-6 rounded-lg focus:ring focus:ring-purple-500 focus:ring-opacity-50 bg-[#17063B] border-purple-500 focus:border-purple-500 placeholder-slate-400'
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              Your Email
+                            </label>
+                            <input
+                              type='email'
+                              id='email'
+                              name='email'
+                              placeholder='email@company.com'
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              No. of Employees
+                            </label>
+                            <input
+                              type='number'
+                              id='employee'
+                              name='employee'
+                              placeholder='XX'
+                              min={1}
+                              max={1000000}
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              Phone Number
+                            </label>
+                            <input
+                              type='tel'
+                              id='phone'
+                              name='phone'
+                              placeholder='XXX-XXX-XXXX'
+                              min={1}
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                            />
+                          </div>
+                          <FormDropdown
+                            title='Type of Business'
+                            options={businessOptions}
+                            setSelected={setBusiness}
+                            selected={business}
+                          />
+                          <FormDropdown
+                            title='Select your industry'
+                            options={industryOptions}
+                            setSelected={setIndustry}
+                            selected={industry}
+                          />
+                          <div className='space-y-1 text-left w-full md:col-span-2'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              What services/product you offer?
+                            </label>
+                            <textarea
+                              id='providing'
+                              name='provides'
+                              rows={3}
+                              placeholder='We offer digital marketing services for SaaS based companies, automation services, VC for startups, operations management software for alerts and issue management etc...  #finance #marketing #saas #automation'
+                              className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full md:col-span-2'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              What are your business requirements?
+                            </label>
+                            <textarea
+                              id='seeking'
+                              name='seeks'
+                              rows={3}
+                              placeholder='Looking for SaaS Companies, Digital Marketing Agency, Automation, Financal Services, VC Firms etc... 
                         #finance #marketing #saas #automation
                         '
-                        className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
-                      />
-                    </div>
+                              className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                            />
+                          </div>
 
-                    <Button
-                      className='w-full mt-5 bg-purple-950 md:col-span-2'
-                      size='lg'
-                      variant='primary'
-                      title={buttonText}
-                      icon={
-                        buttonText === 'Joined!' ? (
-                          <CheckCircleIcon className='w-5 h-5 text-white' />
-                        ) : (
-                          <ClipLoader
-                            color='white'
-                            loading={loading}
-                            size={20}
+                          <Button
+                            className='w-full mt-5 bg-purple-950 md:col-span-2'
+                            size='lg'
+                            variant='primary'
+                            title={buttonText}
+                            icon={
+                              buttonText === 'Joined!' ? (
+                                <CheckCircleIcon className='w-5 h-5 text-white' />
+                              ) : (
+                                <ClipLoader
+                                  color='white'
+                                  loading={loading}
+                                  size={20}
+                                />
+                              )
+                            }
+                            type='submit'
                           />
-                        )
-                      }
-                      type='submit'
-                    />
-                  </form>
+                        </form>
+                      )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

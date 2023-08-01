@@ -16,7 +16,7 @@ export default function Home() {
     <main
       id='main'
       className={
-        plus_jakarta_sans.className + ' dark bg-slate-950'
+        plus_jakarta_sans.className + ' bg-slate-950 text-white/90 dark'
       }>
       <Navbar />
       <WaitlistForm />

@@ -19,13 +19,13 @@ const faqs = [
       "It's 100% safe, No contact number or mail id would be shared with anyone, you will be getting only meeting requests which you need to accept or reject. Also, you can keep your profile offline to stop receiving any meeting requests.",
   },
   {
-    question: 'Which teams &amp;amp; businesses can use it?',
+    question: 'Which teams & businesses can use it?',
     answer:
       'Every business can use Tendrs, no need to spend a high price for purchasing Sales tools, CRM, or having a big sales team to start a Business. If you have a company registered you can start using Tendrs to identify clients and start sending your proposals instantly. This platform is for every B2B businesses.',
   },
   {
     question:
-      'Can startups &amp;amp; investors also be part of this Tendr platform?',
+      'Can startups & investors also be part of this Tendr platform?',
     answer:
       "Yes, everyone can be part of this platform. We haven't built the models to match investors &amp;amp; startups yet. Soon we will be launching the same.",
   }

@@ -1,6 +1,4 @@
-import { SparklesIcon } from '@heroicons/react/24/solid'
 import Button from '../Base/Button'
-import Chip from '../Base/Chip'
 import FormModal from './FormModal'
 import { WaitlistFormAtom } from './FormModal'
 import { useSetAtom } from 'jotai'
@@ -54,7 +52,7 @@ export default function WaitlistForm() {
                 variant='primary'
                 title={'Join the Waitlist!'}
                 type='submit'
-                onClick={() => setWaitlistForm(true)}
+                onClick={() => setWaitlistForm(1)}
               />
               <p
                 data-aos='fade-up'
