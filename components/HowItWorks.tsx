@@ -61,7 +61,9 @@ const HowItWorks = () => {
         <div className='flex flex-col md:flex-row items-center justify-around w-full gap-20 md:gap-4'>
           {
             data.map((item) => (
-              <div className='max-w-xs flex-1 text-center flex flex-col items-center'>
+              <div
+                key={item.id}
+                className='max-w-xs flex-1 text-center flex flex-col items-center'>
                 {/* 2 */}
                 <div className='flex'>
                   <svg

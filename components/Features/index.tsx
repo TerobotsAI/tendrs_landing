@@ -14,6 +14,7 @@ const data = [
       <ArrowTrendingUpIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
     chipText: 'Grow Business',
+    image: '/features/growth.png',
     description:
       'With trusted profile verifications & AI driven client, vendor matchmakings, get automatically connected to the right clients & vendors to grow 10x for your business',
   },
@@ -24,6 +25,7 @@ const data = [
       <ClockIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
     chipText: 'Save Time',
+    image: '/features/save-time.png',
     description:
       'Lead time of finding the leads and contacting them or sending emails can be reduced. You can start a business even with a minimal sales team at hand.',
   },
@@ -35,6 +37,7 @@ const data = [
       <XCircleIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
     chipText: 'Zero Spam',
+    image: '/features/privacy.png',
     description:
       'No need to look for additional database, cold calling or Spaming inboxes , sending inmails to clients. just add your requirements and AI will do the magic of identifying the suitable matches and sends meeting requests at the time selected by you.',
   },
@@ -44,7 +47,8 @@ const data = [
     icon: (
       <SparklesIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
-    chipText: 'No boundaries',
+    chipText: 'High Conversion',
+    image: '/features/meetings.png',
     description:
       'Instead of sharing visiting cards, use Tendrs.ai to quicky connect and also identify if they are your potential clients or vendors',
   },

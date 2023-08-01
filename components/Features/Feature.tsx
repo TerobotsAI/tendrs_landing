@@ -3,16 +3,16 @@ import Chip from '../Base/Chip'
 import clsx from 'clsx'
 
 interface Props {
-  data : any
+  data: any
 }
 
-export default function Feature({data}: Props) {
+export default function Feature({ data }: Props) {
   return (
     <>
       {/* Logos Section: Boxed with Heading Alternate */}
       <div className='dark:text-gray-100'>
         <div
-          
+
           className={clsx(
             'py-16 lg:py-32 flex flex-col items-center gap-10 lg:gap-16',
             data.id % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'
@@ -42,9 +42,9 @@ export default function Feature({data}: Props) {
             data-aos={
               data.id % 2 === 0 ? 'fade-up-right' : 'fade-up-left'
             }
-            className='flex-1 grid place-items-center bg-white/5 rounded-lg border border-purple-500 h-80'>
+            className='h-80 max-w-[600px]'>
             <div className='grow gap-4'>
-              <Image height={100} width={300} src='/Logo.svg' alt='' />
+              <Image height={400} width={800} src={data.image} alt='' />
             </div>
           </div>
           {/* END Logos */}

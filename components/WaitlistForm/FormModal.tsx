@@ -8,6 +8,7 @@ import Button from '../Base/Button'
 import { ClipLoader } from 'react-spinners'
 import { atom, useAtom } from 'jotai'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const WaitlistFormAtom = atom(0)
 
@@ -180,7 +181,10 @@ export default function FormModal() {
                           {/* Values with Icons */}
                           <div className="grid grid-cols-3 gap-8 rounded-lg border text-center p-8 w-fit mx-auto dark:border-gray-700/75">
 
-                            <div className="space-y-4 text-center">
+                            <Link
+                              target='_blank'
+                              href="whatsapp://send?text=Join the watilist on tendrs https://tendrs.ai, and get matched with your perfect business partner! Early waitlisters can get free credits on launch!"
+                              className="space-y-4 text-center">
 
                               <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -190,8 +194,10 @@ export default function FormModal() {
                               <h3 className="font-medium">
                                 Whatsapp
                               </h3>
-                            </div>
-                            <div className="space-y-4">
+                            </Link>
+                            <Link
+                              target='_blank'
+                              href='https://www.linkedin.com/sharing/share-offsite/?url=tendrs.ai' className="space-y-4">
                               <svg xmlns="http://www.w3.org/2000/svg"
 
                                 className="w-8 h-8 mx-auto transition hover:text-blue-600"
@@ -206,14 +212,21 @@ export default function FormModal() {
                               <h3 className="font-medium">
                                 LinkedIn
                               </h3>
-                            </div>
-                            <div className="space-y-4">
+                            </Link>
+                            <button
+                              onClick={
+                                () => {
+                                  navigator.clipboard.writeText('https://tendrs.ai')
+                                  alert('Copied to clipboard!')
+                                }
+                              }
+                              className="space-y-4">
                               <PaperClipIcon className="w-8 h-8 mx-auto transition hover:text-amber-600" />
 
                               <h3 className="font-medium">
                                 Copy Link
                               </h3>
-                            </div>
+                            </button>
                           </div>
                         </div>
                       </>
