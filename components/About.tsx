@@ -31,7 +31,7 @@ export default function About() {
                 size='lg'
                 variant='primary'
                 title='Join the waitlist'
-                onClick={() => setWaitlistForm(true)}
+                onClick={() => setWaitlistForm(1)}
               />
             </div>
           </div>

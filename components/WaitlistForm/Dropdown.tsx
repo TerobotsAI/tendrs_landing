@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { Option } from './FormModal'
@@ -16,7 +16,6 @@ export default function FormDropdown({
   selected,
   setSelected,
 }: FormDropdownProps) {
-  // const [selected, setSelected] = useState<string>(options[0])
 
   return (
     <>
@@ -38,21 +37,19 @@ export default function FormDropdown({
             leaveFrom='opacity-100'
             leaveTo='opacity-0'>
             <Listbox.Options className='absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-slate-950 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-10'>
-              {options.map((option, optionIdx) => (
+              {options.map((option, idx) => (
                 <Listbox.Option
-                  key={optionIdx}
+                  key={idx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 text-white ${
-                      active && 'bg-purple-800/70'
+                    `relative cursor-default select-none py-2 pl-10 pr-4 text-white ${active && 'bg-purple-800/70'
                     }`
                   }
-                  value={option.value}>
+                  value={option}>
                   {({ selected }) => (
                     <>
                       <span
-                        className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}>
+                        className={`block truncate ${selected ? 'font-medium' : 'font-normal'
+                          }`}>
                         {option.title}
                       </span>
                       {selected ? (

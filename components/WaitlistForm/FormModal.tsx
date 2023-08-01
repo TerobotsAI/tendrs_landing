@@ -8,24 +8,12 @@ import Button from '../Base/Button'
 import { ClipLoader } from 'react-spinners'
 import { atom, useAtom } from 'jotai'
 
-export const WaitlistFormAtom = atom(false)
+export const WaitlistFormAtom = atom(0)
 
 export interface Option {
   title: string
   value: string
 }
-const interestedOptions: Option[] = [
-  {
-    title:
-      'Provider - Corporation, Financial Services, Government Agency seeking Minority-Owned/Diverse Companies for Products, Projects, Capital Funding and/or Mentoring opportunities.',
-    value: 'Provider',
-  },
-  {
-    title:
-      'Seeker - Minority-Owned/Diverse Business or Organization seeking opportunities (Supplier opportunities, Access to Capital/Funding, Mentors, Sponsors and/or Professional Advice).',
-    value: 'Seeker',
-  },
-]
 
 const industryOptions: Option[] = [
   {
@@ -54,12 +42,35 @@ const industryOptions: Option[] = [
   },
 ]
 
+const businessOptions: Option[] = [
+  {
+    title: 'Minority-Owned Business',
+    value: 'Minority-Owned Business',
+  },
+  {
+    title: 'Saas Company',
+    value: 'Saas Company',
+  },
+  {
+    title: 'Digital Marketing Agency',
+    value: 'Digital Marketing Agency',
+  },
+  {
+    title: 'Automation',
+    value: 'Automation',
+  },
+  {
+    title: 'Financal Services',
+    value: 'Financal Services',
+  }
+]
+
 export default function FormModal() {
   const [waitlistForm, setWaitlistForm] = useAtom(WaitlistFormAtom)
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Join the Waitlist!')
-  const [interested, setInterested] = useState<Option>(interestedOptions[0])
   const [industry, setIndustry] = useState<Option>(industryOptions[0])
+  const [business, setBusiness] = useState<Option>(businessOptions[0])
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -71,8 +82,6 @@ export default function FormModal() {
     }
     const data = Object.fromEntries(formData)
     data.timestamp = new Date().toLocaleString()
-    // data.interest = interested.value
-    // data.industry = industry.value
 
     console.log(data)
 
@@ -87,8 +96,9 @@ export default function FormModal() {
       .finally(() => {
         setLoading(false)
         setButtonText("We'll send the matches soon to your inbox!")
+        setWaitlistForm(2)
         setTimeout(() => {
-          setWaitlistForm(false)
+          setWaitlistForm(0)
         }, 600)
       })
 
@@ -101,12 +111,12 @@ export default function FormModal() {
       {/* Modals: With Form */}
       <div>
         {/* Modal Container */}
-        <Transition appear show={waitlistForm} as={Fragment}>
+        <Transition appear show={waitlistForm == 1} as={Fragment}>
           <Dialog
             as='div'
             className='relative z-90 dark'
             onClose={() => {
-              setWaitlistForm(false)
+              setWaitlistForm(0)
             }}>
             {/* Modal Backdrop */}
             <Transition.Child
@@ -134,13 +144,14 @@ export default function FormModal() {
                 <Dialog.Panel className='relative pt-4 w-full max-w-3xl mx-auto flex flex-col rounded-lg shadow-sm text-gray-100 bg-slate-800'>
                   <button
                     onClick={() => {
-                      setWaitlistForm(false)
+                      setWaitlistForm(0)
                     }}
                     type='button'
                     className='absolute m-2 top-0 right-0 inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-3 py-2 leading-5 text-sm border-transparent text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700'>
                     <XMarkIcon className='w-4 h-4 ' />
                   </button>
                   {/* coded here */}
+                  {/* Share this  */}
                   <form
                     onSubmit={handleSubmit}
                     className='grid grid-cols-1 md:grid-cols-2 items-end gap-6 p-4'>
@@ -184,18 +195,23 @@ export default function FormModal() {
                     </div>
                     <div className='space-y-1 text-left w-full'>
                       <label htmlFor='email' className='font-medium text-sm'>
-                        No. of Employees
+                        Phone Number
                       </label>
                       <input
                         type='number'
-                        id='employee'
-                        name='employee'
-                        placeholder='XX'
+                        id='phone'
+                        name='phone'
+                        placeholder='XXX-XXX-XXXX'
                         min={1}
-                        max={1000000}
                         className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                       />
                     </div>
+                    <FormDropdown
+                      title='Type of Business'
+                      options={businessOptions}
+                      setSelected={setBusiness}
+                      selected={business}
+                    />
                     <FormDropdown
                       title='Select your industry'
                       options={industryOptions}
@@ -228,18 +244,6 @@ export default function FormModal() {
                         className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                       />
                     </div>
-                    {/* <FormDropdown
-                      title='Are you interested in providing or seeking opportunities?'
-                      options={interestedOptions}
-                      setSelected={setInterested}
-                      selected={interested}
-                    />
-                    <FormDropdown
-                      title='Which of the following best describes you today?'
-                      options={typeOptions}
-                      setSelected={setType}
-                      selected={type}
-                    /> */}
 
                     <Button
                       className='w-full mt-5 bg-purple-950 md:col-span-2'
