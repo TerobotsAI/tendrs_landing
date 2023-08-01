@@ -13,7 +13,7 @@ const data = [
     icon: (
       <ArrowTrendingUpIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
-    chipText : 'Grow Business',
+    chipText: 'Grow Business',
     description:
       'With trusted profile verifications & AI driven client, vendor matchmakings, get automatically connected to the right clients & vendors to grow 10x for your business',
   },
@@ -23,7 +23,7 @@ const data = [
     icon: (
       <ClockIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
-    chipText : 'Save Time',
+    chipText: 'Save Time',
     description:
       'Lead time of finding the leads and contacting them or sending emails can be reduced. You can start a business even with a minimal sales team at hand.',
   },
@@ -34,7 +34,7 @@ const data = [
     icon: (
       <XCircleIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
-    chipText : 'Zero Spam',
+    chipText: 'Zero Spam',
     description:
       'No need to look for additional database, cold calling or Spaming inboxes , sending inmails to clients. just add your requirements and AI will do the magic of identifying the suitable matches and sends meeting requests at the time selected by you.',
   },
@@ -44,7 +44,7 @@ const data = [
     icon: (
       <SparklesIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
     ),
-    chipText : 'No boundaries',
+    chipText: 'No boundaries',
     description:
       'Instead of sharing visiting cards, use Tendrs.ai to quicky connect and also identify if they are your potential clients or vendors',
   },
@@ -53,7 +53,7 @@ const data = [
 export default function Features() {
   return (
     <>
-      <div className='dark'>
+      <div className='dark' id='benefits'>
         <div className='relative overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
           <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
             <div className='text-center'>
@@ -84,7 +84,7 @@ export default function Features() {
             {data.map((item) => (
               <Feature
                 key={item.id}
-               data = {item}
+                data={item}
               />
             ))}
           </div>

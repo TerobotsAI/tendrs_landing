@@ -16,20 +16,22 @@ export default function Navbar() {
     },
     {
       name: 'About',
-      url: '#',
+      url: '#about',
+    },
+    {
+      name: 'How it works',
+      url: '#how-it-works',
     },
     {
       name: 'Benefits',
-      url: '#',
+      url: '#benefits',
     },
+
     {
       name: 'FAQs',
-      url: '#',
+      url: '#faqs',
     },
-    {
-      name: 'Contact Us',
-      url: '#',
-    },
+
   ]
 
   return (

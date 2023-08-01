@@ -1,6 +1,6 @@
 const HowItWorks = () => {
   return (
-    <section className='relative py-24 text-white bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border overflow-hidden'>
+    <section id='how-it-works' className='relative py-24 text-white bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border overflow-hidden'>
       <div className='container px-4 mx-auto'>
         <div className='max-w-xl text-center mx-auto mb-20'>
           <h2 className='text-4xl lg:text-5xl leading-normal max-w-2xl mx-auto lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
@@ -32,7 +32,7 @@ const HowItWorks = () => {
               Set up an account
             </h3>
             <p className='text-slate-400 tracking-tight'>
-              Create your account and get started with our platform. It's easy
+              Create your account and get started with our platform. It&apos;s easy
               and quick to set up, so you can begin connecting with potential
               clients and vendors right away.
             </p>

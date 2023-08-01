@@ -26,7 +26,7 @@ export default function WaitlistForm() {
                 className={clsx(
                   'text-2xl italic mb-5 rounded-full mx-auto flex justify-center items-center gap-2  leading-4 w-fit'
                 )}>
-                It's Finally Here!
+                It&apos;s Finally Here!
               </div>
               <h1
                 data-aos='fade-up'

@@ -182,6 +182,20 @@ export default function FormModal() {
                         className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                       />
                     </div>
+                    <div className='space-y-1 text-left w-full'>
+                      <label htmlFor='email' className='font-medium text-sm'>
+                        No. of Employees
+                      </label>
+                      <input
+                        type='number'
+                        id='employee'
+                        name='employee'
+                        placeholder='XX'
+                        min={1}
+                        max={1000000}
+                        className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                      />
+                    </div>
                     <FormDropdown
                       title='Select your industry'
                       options={industryOptions}

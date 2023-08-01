@@ -8,7 +8,7 @@ export default function About() {
 
   return (
     <>
-      <div className='dark'>
+      <div className='dark' id="about">
         <div className='relative overflow-hidden dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border '>
           <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
             <div className='text-center'>

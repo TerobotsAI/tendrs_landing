@@ -18,10 +18,10 @@ export default function Hero() {
                 30k+ businesses around the world to connect using AI
               </h1>
               <h2 className='text-lg font-medium max-w-4xl mx-auto text-white/70'>
-                Introducing the world's first ever AI that can capture your
+                Introducing the world&apos;s first ever AI that can capture your
                 needs & requirements and auto fix meetings with your suitable
                 clients or vendors across the globe to help you grow your
-                business , find best deals and to keep you busy all the day.
+                business, find best deals and to keep you busy all the day.
                 Just enter your offerings & reuirements once and get the leads
                 for lifetime.
               </h2>

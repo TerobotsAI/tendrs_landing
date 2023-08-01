@@ -36,7 +36,7 @@ export default function FAQs() {
   return (
     <>
       {/* FAQ Section: To The Side */}
-      <div className='relative py-10 overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+      <div id='faqs' className='relative py-10 overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
         <div className='lg:flex space-y-16 lg:justify-between lg:space-x-8 lg:space-y-0 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Heading */}
           <div className='text-center lg:text-left flex-1'>
@@ -57,8 +57,8 @@ export default function FAQs() {
 
           {/* FAQ */}
           <dl className="space-y-6 divide-y flex-[2] divide-white/20">
-            {faqs.map((faq) => (
-              <FAQ faq={faq} />
+            {faqs.map((faq, idx) => (
+              <FAQ key={idx} faq={faq} />
             ))}
           </dl>
           {/* END FAQ */}
