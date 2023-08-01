@@ -10,18 +10,13 @@ import Features from '@/components/Features'
 import About from '@/components/About'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import { useRef } from 'react'
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import HowItWorks from '@/components/HowItWorks'
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export default function Home() {
   const containerRef = useRef(null)
   return (
-    // <LocomotiveScrollProvider
-    //   options={{
-    //     smooth: true,
-    //   }}
-    //   containerRef={containerRef}>
     <main
       data-scroll-container
       id='main'
@@ -30,16 +25,16 @@ export default function Home() {
         plus_jakarta_sans.className + ' dark bg-slate-950 scroll-smooth'
       }>
       <Navbar />
-      <Hero data-scroll-section />
-      <Banner data-scroll-section />
-      <About data-scroll-section />
-      <Differences data-scroll-section />
+      <WaitlistForm />
+      {/* <Banner /> */}
+      <About />
+      <HowItWorks />
+      <Differences />
       <Features />
       <Stats />
       <FAQs />
-      <WaitlistForm />
+      {/* <Hero /> */}
       <Footer />
     </main>
-    // </LocomotiveScrollProvider>
   )
 }

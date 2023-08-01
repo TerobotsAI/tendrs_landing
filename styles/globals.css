@@ -29,7 +29,7 @@
 }
 
 .bg-radial-back {
-  background: radial-gradient(circle at center, #3b0764 0px, transparent 350px);
+  background: radial-gradient(circle at center, #7010ba 0px, transparent 400px);
 }
 
 html.has-scroll-smooth {

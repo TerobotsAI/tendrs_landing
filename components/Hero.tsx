@@ -14,13 +14,16 @@ export default function Hero() {
                 title='New: B2B AI has just landed'
               />
 
-              <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
-                Bringing B2B community all at one place using AI{' '}
+              <h1 className='text-4xl lg:text-5xl leading-normal max-w-2xl mx-auto lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
+                30k+ businesses around the world to connect using AI
               </h1>
-              <h2 className='text-lg font-medium lg:w-2/3 mx-auto text-white/90'>
-                Using Tendrs Ai,you can post your requirements & your offerings
-                and AI will help you identify suitable clients & vendors and fix
-                the meetings instantly.
+              <h2 className='text-lg font-medium max-w-4xl mx-auto text-white/70'>
+                Introducing the world's first ever AI that can capture your
+                needs & requirements and auto fix meetings with your suitable
+                clients or vendors across the globe to help you grow your
+                business , find best deals and to keep you busy all the day.
+                Just enter your offerings & reuirements once and get the leads
+                for lifetime.
               </h2>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 text-center max-w-sm mx-auto sm:items-center sm:justify-center gap-3 mt-10 py-10'>

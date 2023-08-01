@@ -42,8 +42,8 @@ export default function FormDropdown({
                 <Listbox.Option
                   key={optionIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-purple-800/70 text-purple-100' : 'text-white'
+                    `relative cursor-default select-none py-2 pl-10 pr-4 text-white ${
+                      active && 'bg-purple-800/70'
                     }`
                   }
                   value={option.value}>

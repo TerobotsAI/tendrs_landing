@@ -1,6 +1,7 @@
-import Chip from './Base/Chip'
+import Chip from '../Base/Chip'
+import FAQ from './FAQ'
 
-const questions = [
+const faqs = [
   {
     question:
       'We are using linkedin sales navigator to find our clients, how is Tendrs different than that?',
@@ -27,21 +28,22 @@ const questions = [
       'Can startups &amp;amp; investors also be part of this Tendr platform?',
     answer:
       "Yes, everyone can be part of this platform. We haven't built the models to match investors &amp;amp; startups yet. Soon we will be launching the same.",
-  },
+  }
 ]
+
 
 export default function FAQs() {
   return (
     <>
       {/* FAQ Section: To The Side */}
-      <div className='relative overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+      <div className='relative py-10 overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
         <div className='lg:flex space-y-16 lg:justify-between lg:space-x-8 lg:space-y-0 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Heading */}
-          <div className='text-center lg:text-left'>
+          <div className='text-center lg:text-left flex-1'>
             <Chip
               variant='secondary'
               title='We Answer'
-              className='mb-4'
+              className='mb-4 mx-auto lg:mx-0'
               group
             />
             <h2 className='text-4xl lg:text-5xl font-black text-black mb-4 dark:text-white'>
@@ -54,16 +56,11 @@ export default function FAQs() {
           {/* END Heading */}
 
           {/* FAQ */}
-          <div className='space-y-8 lg:w-3/5 lg:flex-none'>
-            {questions.map((question, index) => (
-              <div key={index}>
-                <h4 className='font-semibold mb-2'>{question.question}</h4>
-                <p className='leading-relaxed text-gray-600 dark:text-gray-400'>
-                  {question.answer}
-                </p>
-              </div>
+          <dl className="space-y-6 divide-y flex-[2] divide-white/20">
+            {faqs.map((faq) => (
+              <FAQ faq={faq} />
             ))}
-          </div>
+          </dl>
           {/* END FAQ */}
         </div>
       </div>
@@ -71,3 +68,4 @@ export default function FAQs() {
     </>
   )
 }
+

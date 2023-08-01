@@ -14,11 +14,14 @@
     "@types/node": "20.4.4",
     "@types/react": "18.2.16",
     "@types/react-dom": "18.2.7",
+    "aos": "^2.3.4",
     "autoprefixer": "10.4.14",
     "clsx": "^2.0.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "firebase": "^10.1.0",
+    "framer-motion": "^10.15.0",
+    "jotai": "^2.2.2",
     "locomotive-scroll": "^4.1.4",
     "next": "13.4.12",
     "postcss": "8.4.27",
@@ -33,6 +36,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/aos": "^3.0.4",
     "tailwindcss-dotted-background": "^1.1.0"
   }
 }
