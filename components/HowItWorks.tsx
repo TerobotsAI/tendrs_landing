@@ -54,8 +54,8 @@ const HowItWorks = () => {
             How it works
           </h2>
           <p className='text-lg font-medium max-w-4xl mx-auto text-white/70'>
-            Use and re-use tons of responsive sections too a main create the
-            perfect layout. Sections are ready.
+            Our platform is designed to make it easy for you to connect with
+            potential clients and vendors.
           </p>
         </div>
         <div className='flex flex-col md:flex-row items-center justify-around w-full gap-20 md:gap-4'>

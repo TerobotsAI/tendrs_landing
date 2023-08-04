@@ -50,6 +50,8 @@ export const WaitlistFormAtom = atom(0)
 export interface Option {
   title: string
   value: string
+  _key?: string
+  _type?: string
 }
 
 const industryOptions: Option[] = [
@@ -103,14 +105,27 @@ const businessOptions: Option[] = [
 ]
 
 export default function FormModal(props: { formFields?: any }) {
-  console.log(props.formFields)
 
   const [waitlistForm, setWaitlistForm] = useAtom(WaitlistFormAtom)
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Join the Waitlist!')
+  const [formFields, setFormFields] = useState(props.formFields)
+
   const [industry, setIndustry] = useState<Option>(industryOptions[0])
   const [business, setBusiness] = useState<Option>(businessOptions[0])
 
+  useEffect(() => {
+    async function fetchData() {
+      const res = await client.fetch(formFieldsQuery)
+      // localStorage.setItem('formFields', JSON.stringify(res))
+      console.log(res)
+      setFormFields(res)
+      setIndustry(res[0].options[0])
+      setBusiness(res[1].options[0])
+    }
+    fetchData()
+
+  }, [])
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -138,7 +153,6 @@ export default function FormModal(props: { formFields?: any }) {
         setLoading(false)
         setButtonText("We'll send the matches soon to your inbox!")
         setWaitlistForm(2)
-
       })
 
     setTimeout(() => {
@@ -227,7 +241,7 @@ export default function FormModal(props: { formFields?: any }) {
                               href="whatsapp://send?text=Join the watilist on tendrs https://tendrs.ai, and get matched with your perfect business partner! Early waitlisters can get free credits on launch!"
                               className="space-y-4 text-center">
 
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
                                 <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
@@ -242,7 +256,7 @@ export default function FormModal(props: { formFields?: any }) {
                               <svg xmlns="http://www.w3.org/2000/svg"
 
                                 className="w-8 h-8 mx-auto transition hover:text-blue-600"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                                 <path d="M8 11l0 5"></path>
@@ -287,6 +301,7 @@ export default function FormModal(props: { formFields?: any }) {
                               name='name'
                               placeholder='John Doe'
                               className='w-full block border px-3 py-4 leading-6 rounded-lg focus:ring focus:ring-purple-500 focus:ring-opacity-50 bg-[#17063B] border-purple-500 focus:border-purple-500 placeholder-slate-400'
+                              required
                             />
                           </div>
                           <div className='space-y-1 text-left w-full'>
@@ -299,6 +314,7 @@ export default function FormModal(props: { formFields?: any }) {
                               name='email'
                               placeholder='email@company.com'
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
                             />
                           </div>
                           <div className='space-y-1 text-left w-full'>
@@ -313,6 +329,7 @@ export default function FormModal(props: { formFields?: any }) {
                               min={1}
                               max={1000000}
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
                             />
                           </div>
                           <div className='space-y-1 text-left w-full'>
@@ -326,17 +343,18 @@ export default function FormModal(props: { formFields?: any }) {
                               placeholder='XXX-XXX-XXXX'
                               min={1}
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
                             />
                           </div>
                           <FormDropdown
                             title='Type of Business'
-                            options={businessOptions}
+                            options={formFields ? formFields[1].options : businessOptions}
                             setSelected={setBusiness}
                             selected={business}
                           />
                           <FormDropdown
                             title='Select your industry'
-                            options={industryOptions}
+                            options={formFields ? formFields[0].options : industryOptions}
                             setSelected={setIndustry}
                             selected={industry}
                           />
@@ -350,6 +368,7 @@ export default function FormModal(props: { formFields?: any }) {
                               rows={3}
                               placeholder='We offer digital marketing services for SaaS based companies, automation services, VC for startups, operations management software for alerts and issue management etc...  #finance #marketing #saas #automation'
                               className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
                             />
                           </div>
                           <div className='space-y-1 text-left w-full md:col-span-2'>
@@ -364,6 +383,7 @@ export default function FormModal(props: { formFields?: any }) {
                         #finance #marketing #saas #automation
                         '
                               className='w-full block border placeholder-slate-500 p-3 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
                             />
                           </div>
 
