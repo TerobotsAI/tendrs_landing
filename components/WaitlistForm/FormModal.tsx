@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { db } from '../../lib/firebase'
 import { Dialog, Transition } from '@headlessui/react'
@@ -9,6 +9,41 @@ import { ClipLoader } from 'react-spinners'
 import { atom, useAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
+import client from '../../lib/sanity'
+import { groq } from 'next-sanity'
+import { GetStaticProps } from 'next'
+
+const formFieldsQuery = groq`
+*[_type == "formFields"] {
+  _id, 
+  name, 
+  label, 
+  options
+}
+`
+
+export const getStaticProps: GetStaticProps = () => {
+  const formFields: any = []
+
+  client.fetch(formFieldsQuery).then((res: any) => {
+    res.json()
+  }).then((data: any) => {
+    data.forEach((field: any) => {
+      formFields.push({
+        name: field.name,
+        label: field.label,
+        options: field.options
+      })
+    })
+  })
+  return {
+    props: {
+      formFields,
+    }
+  }
+}
+
+
 
 export const WaitlistFormAtom = atom(0)
 
@@ -67,12 +102,15 @@ const businessOptions: Option[] = [
   }
 ]
 
-export default function FormModal() {
+export default function FormModal(props: { formFields?: any }) {
+  console.log(props.formFields)
+
   const [waitlistForm, setWaitlistForm] = useAtom(WaitlistFormAtom)
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Join the Waitlist!')
   const [industry, setIndustry] = useState<Option>(industryOptions[0])
   const [business, setBusiness] = useState<Option>(businessOptions[0])
+
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -84,7 +122,8 @@ export default function FormModal() {
     }
     const data = Object.fromEntries(formData)
     data.timestamp = new Date().toLocaleString()
-
+    data.industry = industry.title
+    data.business = business.title
     console.log(data)
 
     addDoc(collection(db, 'customers'), data)
@@ -109,6 +148,8 @@ export default function FormModal() {
   return (
     <>
       {/* Modals: With Form */}
+
+
       <div>
         {/* Modal Container */}
         <Transition appear show={waitlistForm == 1 || waitlistForm == 2} as={Fragment}>
