@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 interface ButtonProps {
   title: string
+  subtext?: string
   variant?: 'primary' | 'secondary'
   size?: 'sm' | 'lg'
   className?: string
@@ -34,7 +35,7 @@ function checkSize(size: string | undefined) {
 }
 
 const Button = ({
-  title,
+  title, subtext,
   variant,
   size,
   className,
@@ -54,7 +55,12 @@ const Button = ({
       )}
       href={link}
       {...props}>
-      {title}
+      <p>{title}
+
+        <span
+          className='block text-xs '
+        >{subtext}</span>
+      </p>
       {icon}
     </Tag>
   )

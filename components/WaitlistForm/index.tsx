@@ -28,15 +28,11 @@ export default function WaitlistForm() {
               <h1
 
                 className='text-3xl lg:text-5xl my-9 leading-tight lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
-                30,000+ businesses unlocked the power of AI automation for
-                seamless business matchmaking
+                30,000+ businesses have unleashed their potential: AI-driven meetings with prospective clients & vendors!
               </h1>
               <h2
                 className='text-base md:text-lg max-w-4xl mx-auto text-white/70 my-5'>
-                With our cutting-edge AI algorithms, finding your ideal business
-                match is now faster than ever. Say goodbye to tedious manual
-                searches and let our AI-powered platform deliver instant matches
-                at the tap of a button.
+                Effortlessly Grow Your Business with AI! Enter requirements once, and let AI handle the rest. AI seamlessly arranges meetings with clients & vendors 24/7, 365 days. Say goodbye to missed opportunities and scheduling hassles. Embrace success with AI-facilitated meetings!
               </h2>
             </div>
             <div className='flex flex-col text-center max-w-sm mx-auto sm:items-center sm:justify-stretch gap-3 py-8'>
@@ -44,7 +40,8 @@ export default function WaitlistForm() {
                 className='w-full mt-5 bg-[#2b0653]'
                 size='lg'
                 variant='primary'
-                title={'Join the Waitlist!'}
+                title='Register Now!'
+                subtext='and Join 30,000+ Businesses'
                 type='submit'
                 onClick={() => setWaitlistForm(1)}
               />
@@ -52,7 +49,8 @@ export default function WaitlistForm() {
                 data-aos='fade-up'
                 data-aos-delay='400'
                 className='text-sm md:col-span-2 text-white/70'>
-                No Spam, No Data Sharing. Your Privacy is our priority.
+                Add your offerings and requirements to get matches to your inbox.
+                {/* No Spam, No Data Sharing. Your Privacy is our priority. */}
               </p>
             </div>
           </div>

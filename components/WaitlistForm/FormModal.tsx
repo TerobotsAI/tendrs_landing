@@ -81,11 +81,12 @@ const businessOptions: Option[] = [
   }
 ]
 
+
 export default function FormModal(props: { formFields?: any }) {
 
   const [waitlistForm, setWaitlistForm] = useAtom(WaitlistFormAtom)
   const [loading, setLoading] = useState(false)
-  const [buttonText, setButtonText] = useState('Join the Waitlist!')
+  const [buttonText, setButtonText] = useState('Submit')
   const [formFields, setFormFields] = useState(props.formFields)
 
   const [industry, setIndustry] = useState<Option>(industryOptions[0])
@@ -133,7 +134,7 @@ export default function FormModal(props: { formFields?: any }) {
       })
 
     setTimeout(() => {
-      setButtonText('Join the Waitlist!')
+      setButtonText('Register Here!!')
     }, 1000)
   }
   return (
@@ -202,11 +203,23 @@ export default function FormModal(props: { formFields?: any }) {
 
 
                             <h2 className="text-4xl font-black mb-4 dark:text-white">
-                              Share this with your friends and colleagues
+                              Thank you for registering!
                             </h2>
-                            <h3 className="text-xl font-medium leading-relaxed text-gray-800 mx-auto dark:text-gray-300">
-                              We are on a mission to help 1 million businesses grow by 2025. Help us reach our goal by sharing Tendrs with your friends and colleagues.
-                            </h3>
+                            <p className="text-xl max-w-xl leading-relaxed text-gray-800 mx-auto dark:text-gray-300">
+                              Share this to start getting matches to your inbox
+                            </p>
+                            {/* 
+                            step -1 : share more
+                            step -2 : get more match credits
+                            step -3 : get lifetime free access
+                            */}
+                            <ul className='text-left list-item mx-auto list-disc w-fit'>
+
+                              <li>More matches in your inbox</li>
+                              <li>More match credits</li>
+                              <li>Guareented Early access to the product</li>
+                              <li>Chance to get a lifetime access</li>
+                            </ul>
                           </div>
                           {/* END Heading */}
 
@@ -294,7 +307,7 @@ export default function FormModal(props: { formFields?: any }) {
                               required
                             />
                           </div>
-                          <div className='space-y-1 text-left w-full'>
+                          {/* <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               No. of Employees
                             </label>
@@ -308,7 +321,7 @@ export default function FormModal(props: { formFields?: any }) {
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                               required
                             />
-                          </div>
+                          </div> */}
                           <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               Phone Number
@@ -323,7 +336,47 @@ export default function FormModal(props: { formFields?: any }) {
                               required
                             />
                           </div>
-                          <FormDropdown
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              Company Website
+                            </label>
+                            <input
+                              type='url'
+                              id='website'
+                              name='website'
+                              placeholder='your-company.com'
+
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              LinkedIn Profile Link
+                            </label>
+                            <input
+                              type='url'
+                              id='linkedin'
+                              name='linkedin'
+                              placeholder='https://linked.in/in/companyname/yourname'
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
+                            />
+                          </div>
+                          <div className='space-y-1 text-left w-full'>
+                            <label htmlFor='email' className='font-medium text-sm'>
+                              Your Role
+                            </label>
+                            <input
+                              type='text'
+                              id='role'
+                              name='role'
+                              placeholder='CEO, CFO, Sales Executive, Founder etc...'
+                              className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
+                              required
+                            />
+                          </div>
+                          {/* <FormDropdown
                             title='Type of Business'
                             options={formFields ? formFields[1].options : businessOptions}
                             setSelected={setBusiness}
@@ -334,7 +387,7 @@ export default function FormModal(props: { formFields?: any }) {
                             options={formFields ? formFields[0].options : industryOptions}
                             setSelected={setIndustry}
                             selected={industry}
-                          />
+                          /> */}
                           <div className='space-y-1 text-left w-full md:col-span-2'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               What services/product you offer?

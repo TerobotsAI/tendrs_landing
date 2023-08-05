@@ -41,7 +41,7 @@ export default function Stats() {
           <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
             <div className='text-center'>
               <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
-                Revolutionizing B2B <br /> connect
+                Bringing B2B all at <br /> one place Globally
               </h1>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-10'>

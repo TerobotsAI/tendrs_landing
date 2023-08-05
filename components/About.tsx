@@ -30,7 +30,7 @@ export default function About() {
               <Button
                 size='lg'
                 variant='primary'
-                title='Join the waitlist'
+                title='Register Here!'
                 onClick={() => setWaitlistForm(1)}
               />
             </div>
