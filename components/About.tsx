@@ -14,10 +14,10 @@ export default function About() {
             <div className='text-center'>
               <Chip title='About Tendrs' />
 
-              <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
+              <h1 className='text-3xl lg:text-5xl leading-tight lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
                 What is Tendrs AI?
               </h1>
-              <h2 className='text-lg font-medium lg:max-w-4xl mx-auto text-white/70'>
+              <h2 className='text-base md:text-lg lg:max-w-4xl mx-auto text-white/70'>
                 Businesses thrive on their unique offerings and specific
                 requirements, employing multiple tools and methods to reach
                 their ideal clients and vendors. As a team of engineers, we have

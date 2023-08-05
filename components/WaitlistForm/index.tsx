@@ -32,7 +32,7 @@ export default function WaitlistForm() {
                 seamless business matchmaking
               </h1>
               <h2
-                className='text-base md:text-lg font-medium max-w-4xl mx-auto text-white/70 my-5'>
+                className='text-base md:text-lg max-w-4xl mx-auto text-white/70 my-5'>
                 With our cutting-edge AI algorithms, finding your ideal business
                 match is now faster than ever. Say goodbye to tedious manual
                 searches and let our AI-powered platform deliver instant matches

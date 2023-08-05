@@ -43,7 +43,7 @@ export default function Differences() {
   return (
     <>
       <div className='dark'>
-        <div className='relative overflow-hidden dark:text-gray-100 h-screen max-h-[800px] after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+        <div className='relative overflow-hidden dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
           <div className='bg-radial-back relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
             <div className='text-center'>
               <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black mb-4 text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
@@ -53,7 +53,7 @@ export default function Differences() {
                 </span>
               </h1>
             </div>
-            <div className='flex flex-col md:flex-row gap-5 text-center sm:items-center sm:justify-center pt-10 pb-32'>
+            <div className='flex flex-col md:flex-row gap-5 text-center sm:items-center sm:justify-center py-10'>
               {data.map((item) => (
                 <DifferenceCard
                   key={item.id}

@@ -6,9 +6,9 @@ export default function Footer() {
     <>
       {/* Footer Section: With Links Info Newsletter Dark */}
       <div className='dark'>
-        <footer id='page-footer' className='text-gray-100 bg-slate-950'>
-          <div className='container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 lg:gap-14'>
+        <footer id='page-footer' className='text-gray-100 bg-slate-950 border-t-2 border-white/20'>
+          <div className='container xl:max-w-7xl mx-auto px-4 py-10 lg:px-8 '>
+            {/* <div className='text-center max-w-4xl mx-auto'>
               <div className='space-y-6'>
                 <h4 className='text-xs uppercase font-semibold tracking-wider text-gray-400 dark:text-gray-400/75'>
                   <Link
@@ -24,48 +24,50 @@ export default function Footer() {
                   </Link>
                 </h4>
                 <div className='text-white/70 '>
-                  Tendrs.ai is an intelligent platform using cognitive
-                  intelligence and over 100 AI models to help businesses
-                  identify clients or vendors with 99.99% accuracy, reducing
-                  time, cost, and effort in growing businesses.
+                  Businesses thrive on their unique offerings and specific
+                  requirements, employing multiple tools and methods to reach
+                  their ideal clients and vendors. As a team of engineers, we have
+                  developed an advanced AI model to bridge this gap, facilitating
+                  meaningful connections between businesses and the right vendors
+                  or clients, resulting in significant business growth
                 </div>
               </div>
-              <div className='space-y-6 col-span-2 ml-16'>
-                <h4 className='text-lg font-semibold tracking-wider text-white'>
-                  Quick Links
-                </h4>
-                <nav className='flex flex-col space-y-3 text-sm'>
-                  <a
-                    href='#'
-                    className='font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50'>
-                    Solutions
-                  </a>
-                  <a
-                    href='#'
-                    className='font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50'>
-                    Features
-                  </a>
-                  <a
-                    href='#'
-                    className='font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50'>
-                    Pricing Plans
-                  </a>
-                  <a
-                    href='#'
-                    className='font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50'>
-                    Analytics
-                  </a>
-                  <a
-                    href='#'
-                    className='font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50'>
-                    Support Center
-                  </a>
-                </nav>
+
+            </div> */}
+            {/* <hr className='my-10 border-dashed dark:border-gray-700/75' /> */}
+            <div className="flex flex-col sm:flex-row-reverse sm:justify-between space-y-6 sm:space-y-0 text-center sm:text-left text-sm container xl:max-w-7xl mx-auto">
+              <nav className="space-x-2 sm:space-x-4">
+                <a href="#" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
+                  About
+                </a>
+                <a href="#" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
+                  Terms of Service
+                </a>
+                <a href="#" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
+                  Privacy Policy
+                </a>
+              </nav>
+              <div className='text-gray-500 dark:text-gray-400/80'>
+                ©
+                <span className='ml-1 font-medium'>
+                  All Rights Reserved. | Terobots pvt. ltd.
+                </span>{' '}
               </div>
             </div>
-            <hr className='my-10 border-dashed dark:border-gray-700/75' />
-            <div className='flex flex-col md:flex-row-reverse md:justify-between space-y-6 md:space-y-0 text-center md:text-left text-sm'>
-              <nav className='space-x-4'>
+
+          </div>
+        </footer>
+      </div>
+      {/* END Footer Section: With Links Info Newsletter Dark */}
+    </>
+  )
+}
+
+
+const DeadCode = () => {
+  return (
+    <div className='flex justify-center space-y-6 md:space-y-0 text-center md:text-left text-sm'>
+      {/* <nav className='space-x-4'>
                 <a href='#' className='text-gray-400 hover:text-[#1da1f2]'>
                   <svg
                     className='icon-twitter inline-block w-5 h-5'
@@ -113,18 +115,13 @@ export default function Footer() {
                     <path d='M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm9.885 11.441c-2.575-.422-4.943-.445-7.103-.073a42.153 42.153 0 00-.767-1.68c2.31-1 4.165-2.358 5.548-4.082a9.863 9.863 0 012.322 5.835zm-3.842-7.282c-1.205 1.554-2.868 2.783-4.986 3.68a46.287 46.287 0 00-3.488-5.438A9.894 9.894 0 0112 2.087c2.275 0 4.368.779 6.043 2.072zM7.527 3.166a44.59 44.59 0 013.537 5.381c-2.43.715-5.331 1.082-8.684 1.105a9.931 9.931 0 015.147-6.486zM2.087 12l.013-.256c3.849-.005 7.169-.448 9.95-1.322.233.475.456.952.67 1.432-3.38 1.057-6.165 3.222-8.337 6.48A9.865 9.865 0 012.087 12zm3.829 7.81c1.969-3.088 4.482-5.098 7.598-6.027a39.137 39.137 0 012.043 7.46c-3.349 1.291-6.953.666-9.641-1.433zm11.586.43a41.098 41.098 0 00-1.92-6.897c1.876-.265 3.94-.196 6.199.196a9.923 9.923 0 01-4.279 6.701z' />
                   </svg>
                 </a>
-              </nav>
-              <div className='text-gray-500 dark:text-gray-400/80'>
-                ©
-                <span className='ml-1 font-medium'>
-                  All Rights Reserved. | Terobots pvt. ltd.
-                </span>{' '}
-              </div>
-            </div>
-          </div>
-        </footer>
+              </nav> */}
+      <div className='text-gray-500 dark:text-gray-400/80'>
+        ©
+        <span className='ml-1 font-medium'>
+          All Rights Reserved. | Terobots pvt. ltd.
+        </span>{' '}
       </div>
-      {/* END Footer Section: With Links Info Newsletter Dark */}
-    </>
+    </div>
   )
-}
+} 
