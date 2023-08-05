@@ -4,10 +4,14 @@ import Hero from './Hero'
 import Button from './Base/Button'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSetAtom } from 'jotai'
+import { WaitlistFormAtom } from './WaitlistForm/FormModal'
+import { XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon } from '@heroicons/react/20/solid'
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
-
+  const setWaitlistFormOpen = useSetAtom(WaitlistFormAtom)
   // Menu items array to populate both desktop and mobile links
   const menuItems = [
     {
@@ -54,7 +58,7 @@ export default function Navbar() {
                   <Image
                     src='/Logo.svg'
                     height={40}
-                    width={200}
+                    width={150}
                     className='h-10'
                     alt='Tendrs Logo'
                   />
@@ -77,7 +81,11 @@ export default function Navbar() {
                   <Button
                     size='sm'
                     title='Join the waitlist'
-                    link='#waitlist-form'
+                    onClick={() => {
+                      setWaitlistFormOpen(1)
+                      setMobileNavOpen(false)
+                    }}
+
                   />
                 </div>
                 {/* END Actions */}
@@ -88,18 +96,8 @@ export default function Navbar() {
                     type='button'
                     className='inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-3 py-2 leading-5 text-sm border-gray-200 bg-white text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700'
                     aria-controls='tkMobileNav'>
-                    <svg
-                      className='hi-mini hi-bars-3 inline-block w-5 h-5'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 20 20'
-                      fill='currentColor'
-                      aria-hidden='true'>
-                      <path
-                        fillRule='evenodd'
-                        d='M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z'
-                        clipRule='evenodd'
-                      />
-                    </svg>
+
+                    <Bars3Icon className='inline-block w-5 h-5 -mx-0.5' />
                   </button>
                 </div>
                 {/* END Open Mobile Navigation */}
@@ -144,14 +142,8 @@ export default function Navbar() {
                     onClick={() => setMobileNavOpen(false)}
                     type='button'
                     className='inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-3 py-2 leading-5 text-sm border-gray-200  text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700'>
-                    <svg
-                      className='hi-mini hi-x-mark inline-block w-5 h-5 -mx-0.5'
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 20 20'
-                      fill='currentColor'
-                      aria-hidden='true'>
-                      <path d='M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z' />
-                    </svg>
+
+                    <XMarkIcon className='inline-block w-5 h-5 -mx-0.5' />
                   </button>
                   {/* END Close Mobile Navigation */}
                 </div>
@@ -170,9 +162,11 @@ export default function Navbar() {
                 <div className='flex flex-col gap-2 p-6 sm:flex-row'>
                   <Button
                     size='sm'
-                    link='#waitlist-form'
                     title='Join the waitlist'
-                    onClick={() => setMobileNavOpen(false)}
+                    onClick={() => {
+                      setWaitlistFormOpen(1)
+                      setMobileNavOpen(false)
+                    }}
                   />
                 </div>
               </nav>

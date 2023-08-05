@@ -11,7 +11,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import client from '../../lib/sanity'
 import { groq } from 'next-sanity'
-import { GetStaticProps } from 'next'
 
 const formFieldsQuery = groq`
 *[_type == "formFields"] {
@@ -21,28 +20,6 @@ const formFieldsQuery = groq`
   options
 }
 `
-
-export const getStaticProps: GetStaticProps = () => {
-  const formFields: any = []
-
-  client.fetch(formFieldsQuery).then((res: any) => {
-    res.json()
-  }).then((data: any) => {
-    data.forEach((field: any) => {
-      formFields.push({
-        name: field.name,
-        label: field.label,
-        options: field.options
-      })
-    })
-  })
-  return {
-    props: {
-      formFields,
-    }
-  }
-}
-
 
 
 export const WaitlistFormAtom = atom(0)
@@ -306,7 +283,7 @@ export default function FormModal(props: { formFields?: any }) {
                           </div>
                           <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
-                              Your Email
+                              Your Work Email
                             </label>
                             <input
                               type='email'

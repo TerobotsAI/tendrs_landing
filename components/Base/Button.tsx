@@ -27,7 +27,7 @@ function checkSize(size: string | undefined) {
   switch (size) {
     case 'sm':
     default:
-      return 'px-4 py-2 text-sm'
+      return 'px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm'
     case 'lg':
       return 'px-8 py-4'
   }
