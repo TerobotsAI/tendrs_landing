@@ -1,6 +1,6 @@
 import { SparklesIcon } from '@heroicons/react/24/solid'
-import Button from './Base/Button'
-import Chip from './Base/Chip'
+import Button from '../Base/Button'
+import Chip from '../Base/Chip'
 import { WaitlistFormAtom } from './WaitlistForm/FormModal'
 import { useSetAtom } from 'jotai'
 export default function About() {

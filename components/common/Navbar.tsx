@@ -1,13 +1,12 @@
 import { Fragment, useState } from 'react'
 import { Transition } from '@headlessui/react'
-import Hero from './Hero'
-import Button from './Base/Button'
+import Button from '../Base/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSetAtom } from 'jotai'
-import { WaitlistFormAtom } from './WaitlistForm/FormModal'
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Bars3Icon } from '@heroicons/react/20/solid'
+import { WaitlistFormAtom } from '../Home/WaitlistForm/FormModal'
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -53,7 +52,7 @@ export default function Navbar() {
               <div className='flex items-center gap-6'>
                 {/* Logo */}
                 <Link
-                  href='#'
+                  href='/'
                   className='group inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300'>
                   <Image
                     src='/Logo.svg'

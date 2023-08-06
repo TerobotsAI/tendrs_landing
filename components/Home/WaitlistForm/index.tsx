@@ -1,4 +1,4 @@
-import Button from '../Base/Button'
+import Button from '../../Base/Button'
 import FormModal from './FormModal'
 import { WaitlistFormAtom } from './FormModal'
 import { useSetAtom } from 'jotai'

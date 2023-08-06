@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Chip from '../Base/Chip'
+import Chip from '../../Base/Chip'
 import clsx from 'clsx'
 
 interface Props {

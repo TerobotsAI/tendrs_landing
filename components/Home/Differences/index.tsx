@@ -14,7 +14,7 @@ const data = [
         <LightBulbIcon className='inline-block w-8 h-8 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
       </>
     ),
-    "content": "Businesses depend on Ads & search engines for customer needs. Only 20% results from their spend.",
+    "content": "Tendrs AI offers a user-friendly and straightforward platform for businesses to connect with potential customers, vendors, and clients effortlessly.",
   },
   {
     "id": 2,
@@ -24,7 +24,7 @@ const data = [
         <HandThumbUpIcon className='inline-block w-8 h-8 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
       </>
     ),
-    "content": "Tendrs AI helps businesses grow 10X faster & save 50x on Ads by fixing meetings effortlessly.",
+    "content": "Tendrs AI is designed with a people-oriented approach, understanding the importance of human connections in business growth.",
   },
   {
     "id": 3,
@@ -34,7 +34,7 @@ const data = [
       </>
     ),
     "title": "Zero Spam",
-    "content": "Tendrs AI platform connects businesses with clients & vendors, boosting growth & saving costs.",
+    "content": "Tendrs AI ensures a spam-free environment for businesses, connecting them only with relevant and qualified leads.",
   }
 ];
 

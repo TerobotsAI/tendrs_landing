@@ -1,6 +1,6 @@
 import { SparklesIcon } from '@heroicons/react/24/solid'
-import Button from './Base/Button'
-import Chip from './Base/Chip'
+import Button from '@/components/Base/Button'
+import Chip from '@/components/Base/Chip'
 
 export default function Hero() {
   return (

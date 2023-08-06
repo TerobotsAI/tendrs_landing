@@ -58,7 +58,7 @@ const Button = ({
       <p>{title}
 
         <span
-          className='block text-xs '
+          className='block text-xs mt-1'
         >{subtext}</span>
       </p>
       {icon}

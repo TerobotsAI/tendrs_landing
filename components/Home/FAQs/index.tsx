@@ -1,4 +1,4 @@
-import Chip from '../Base/Chip'
+import Chip from '../../Base/Chip'
 import FAQ from './FAQ'
 
 const faqs = [

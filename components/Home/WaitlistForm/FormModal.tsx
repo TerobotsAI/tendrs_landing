@@ -1,25 +1,15 @@
 import { Fragment, useEffect, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../lib/firebase'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckCircleIcon, PaperClipIcon, XMarkIcon } from '@heroicons/react/24/solid'
-import FormDropdown from './Dropdown'
-import Button from '../Base/Button'
+import Button from '../../Base/Button'
 import { ClipLoader } from 'react-spinners'
 import { atom, useAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
-import client from '../../lib/sanity'
-import { groq } from 'next-sanity'
+import { db } from '@/lib/firebase'
 
-const formFieldsQuery = groq`
-*[_type == "formFields"] {
-  _id, 
-  name, 
-  label, 
-  options
-}
-`
+
 
 
 export const WaitlistFormAtom = atom(0)
@@ -82,28 +72,12 @@ const businessOptions: Option[] = [
 ]
 
 
-export default function FormModal(props: { formFields?: any }) {
+export default function FormModal() {
 
   const [waitlistForm, setWaitlistForm] = useAtom(WaitlistFormAtom)
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Submit')
-  const [formFields, setFormFields] = useState(props.formFields)
 
-  const [industry, setIndustry] = useState<Option>(industryOptions[0])
-  const [business, setBusiness] = useState<Option>(businessOptions[0])
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await client.fetch(formFieldsQuery)
-      // localStorage.setItem('formFields', JSON.stringify(res))
-      console.log(res)
-      setFormFields(res)
-      setIndustry(res[0].options[0])
-      setBusiness(res[1].options[0])
-    }
-    fetchData()
-
-  }, [])
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -115,8 +89,6 @@ export default function FormModal(props: { formFields?: any }) {
     }
     const data = Object.fromEntries(formData)
     data.timestamp = new Date().toLocaleString()
-    data.industry = industry.title
-    data.business = business.title
     console.log(data)
 
     addDoc(collection(db, 'customers'), data)
