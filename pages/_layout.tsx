@@ -28,14 +28,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <meta property="og:url" content="https://tendrs.ai" />
       <meta property="og:title" content="Tendrs.AI - AI-driven meetings with prospective clients & vendors!" />
       <meta property="og:description" content="Effortlessly Grow Your Business with AI! Enter requirements once, and let AI handle the rest. AI seamlessly arranges meetings with clients & vendors 24/7, 365 days. Say goodbye to missed opportunities and scheduling hassles. Embrace success with AI-facilitated meetings!" />
-      <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+      <meta property="og:image" content="/Banner.jpg" />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://tendrs.ai" />
       <meta property="twitter:title" content="Tendrs.AI - AI-driven meetings with prospective clients & vendors!" />
       <meta property="twitter:description" content="Effortlessly Grow Your Business with AI! Enter requirements once, and let AI handle the rest. AI seamlessly arranges meetings with clients & vendors 24/7, 365 days. Say goodbye to missed opportunities and scheduling hassles. Embrace success with AI-facilitated meetings!" />
-      <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+      <meta property="twitter:image" content="/Banner.jpg" />
 
       {/* <!-- Meta Tags Generated with https://metatags.io --> */}
     </Head>
