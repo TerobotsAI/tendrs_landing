@@ -7,7 +7,7 @@ const ShareLinks = () => {
             <div className="flex flex-wrap gap-8 rounded-xl border-2 text-center px-4 md:px-10 py-8 mx-auto bg-white/5 backdrop-blur-sm dark:border-white/20 ">
                 <Link
                     target='_blank'
-                    href="whatsapp://send?text=Join the watilist on tendrs https://tendrs.ai, and get matched with your perfect business partner! Early waitlisters can get free credits on launch!"
+                    href="whatsapp://send?text=Join the waitlist on tendrs.ai and get matched with your perfect business partner! Early waitlisters can get free credits on launch! 🚀 #BusinessNetworking #AI #TendrsAI"
                     className="space-y-4 text-center">
 
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500 focus-within:scale-95" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
