@@ -8,6 +8,7 @@ import { atom, useAtom } from 'jotai'
 import Image from 'next/image'
 import Link from 'next/link'
 import { db } from '@/lib/firebase'
+import ShareLinks from '@/components/Share/ShareLinks'
 
 
 
@@ -106,7 +107,7 @@ export default function FormModal() {
       })
 
     setTimeout(() => {
-      setButtonText('Register Here!!')
+      setButtonText('Join the waitlist!')
     }, 1000)
   }
   return (
@@ -196,55 +197,8 @@ export default function FormModal() {
                           {/* END Heading */}
 
                           {/* Values with Icons */}
-                          <div className="grid grid-cols-3 gap-8 rounded-lg border text-center p-8 w-fit mx-auto dark:border-gray-700/75">
-
-                            <Link
-                              target='_blank'
-                              href="whatsapp://send?text=Join the watilist on tendrs https://tendrs.ai, and get matched with your perfect business partner! Early waitlisters can get free credits on launch!"
-                              className="space-y-4 text-center">
-
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mx-auto transition hover:text-green-500" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path>
-                                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
-                              </svg>
-                              <h3 className="font-medium">
-                                Whatsapp
-                              </h3>
-                            </Link>
-                            <Link
-                              target='_blank'
-                              href='https://www.linkedin.com/sharing/share-offsite/?url=tendrs.ai' className="space-y-4">
-                              <svg xmlns="http://www.w3.org/2000/svg"
-
-                                className="w-8 h-8 mx-auto transition hover:text-blue-600"
-                                width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-                                <path d="M8 11l0 5"></path>
-                                <path d="M8 8l0 .01"></path>
-                                <path d="M12 16l0 -5"></path>
-                                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
-                              </svg>
-                              <h3 className="font-medium">
-                                LinkedIn
-                              </h3>
-                            </Link>
-                            <button
-                              onClick={
-                                () => {
-                                  navigator.clipboard.writeText('https://tendrs.ai')
-                                  alert('Copied to clipboard!')
-                                }
-                              }
-                              className="space-y-4">
-                              <PaperClipIcon className="w-8 h-8 mx-auto transition hover:text-amber-600" />
-
-                              <h3 className="font-medium">
-                                Copy Link
-                              </h3>
-                            </button>
-                          </div>
+                          <ShareLinks />
+                          {/* END Values with Icons */}
                         </div>
                       </>
 
@@ -308,7 +262,7 @@ export default function FormModal() {
                               required
                             />
                           </div>
-                          <div className='space-y-1 text-left w-full'>
+                          {/* <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               Company Website
                             </label>
@@ -321,8 +275,8 @@ export default function FormModal() {
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                               required
                             />
-                          </div>
-                          <div className='space-y-1 text-left w-full'>
+                          </div> */}
+                          {/* <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               LinkedIn Profile Link
                             </label>
@@ -334,7 +288,7 @@ export default function FormModal() {
                               className='w-full block border placeholder-slate-500 px-3 py-4 leading-6 rounded-lg border-gray-200 focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50 dark:bg-[#17063B] dark:border-purple-500 dark:focus:border-purple-500 dark:placeholder-slate-400'
                               required
                             />
-                          </div>
+                          </div> */}
                           <div className='space-y-1 text-left w-full'>
                             <label htmlFor='email' className='font-medium text-sm'>
                               Your Role

@@ -79,7 +79,7 @@ export default function Navbar() {
                 <div className='flex items-center justify-center gap-2'>
                   <Button
                     size='sm'
-                    title='Register Here!'
+                    title='Join the waitlist'
                     onClick={() => {
                       setWaitlistFormOpen(1)
                       setMobileNavOpen(false)
@@ -161,7 +161,7 @@ export default function Navbar() {
                 <div className='flex flex-col gap-2 p-6 sm:flex-row'>
                   <Button
                     size='sm'
-                    title='Register Here!'
+                    title='Join the waitlist'
                     onClick={() => {
                       setWaitlistFormOpen(1)
                       setMobileNavOpen(false)

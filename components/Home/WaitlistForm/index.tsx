@@ -40,8 +40,8 @@ export default function WaitlistForm() {
                 className='w-full mt-5 bg-[#2b0653]'
                 size='lg'
                 variant='primary'
-                title='Register Now!'
-                subtext='and Join 30,000+ Businesses'
+                title='Join the waitlist!'
+                subtext='and other 30,000+ Businesses'
                 type='submit'
                 onClick={() => setWaitlistForm(1)}
               />
