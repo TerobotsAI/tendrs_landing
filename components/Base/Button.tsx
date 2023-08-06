@@ -55,13 +55,12 @@ const Button = ({
       )}
       href={link}
       {...props}>
+      {icon}
       <p>{title}
-
         <span
           className='block text-xs mt-1'
         >{subtext}</span>
       </p>
-      {icon}
     </Tag>
   )
 }
