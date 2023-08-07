@@ -37,9 +37,9 @@ export default function Footer() {
             {/* <hr className='my-10 border-dashed dark:border-gray-700/75' /> */}
             <div className="flex flex-col sm:flex-row-reverse sm:justify-between space-y-6 sm:space-y-0 text-center sm:text-left text-sm container xl:max-w-7xl mx-auto">
               <nav className="space-x-2 sm:space-x-4">
-                <a href="#" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
-                  About
-                </a>
+                <Link href="/share" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
+                  Share Now
+                </Link>
                 <a href="#" className="font-medium text-gray-700 hover:text-gray-950 dark:text-gray-400 dark:hover:text-gray-50">
                   Terms of Service
                 </a>

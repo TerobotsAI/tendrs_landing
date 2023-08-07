@@ -4,7 +4,7 @@ import { PaperClipIcon } from '@heroicons/react/24/solid'
 const ShareLinks = () => {
     return (
         <>
-            <div className="flex flex-wrap items-center justify-center gap-8 rounded-xl border-2 text-center px-4 md:px-10 py-8 mx-auto bg-white/5 backdrop-blur-sm dark:border-white/20 ">
+            <div className="flex flex-wrap w-full md:w-max items-center justify-center gap-8 rounded-xl border-2 text-center px-4 md:px-10 py-8 mx-auto bg-white/5 backdrop-blur-sm dark:border-white/20 ">
                 <Link
                     target='_blank'
                     href="whatsapp://send?text=Join the waitlist on tendrs.ai and get matched with your perfect business partner! Early waitlisters can get free credits on launch! 🚀 #BusinessNetworking #AI #TendrsAI"

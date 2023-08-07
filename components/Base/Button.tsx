@@ -35,7 +35,8 @@ function checkSize(size: string | undefined) {
 }
 
 const Button = ({
-  title, subtext,
+  title,
+  subtext,
   variant,
   size,
   className,

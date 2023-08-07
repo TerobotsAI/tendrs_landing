@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { db } from '@/lib/firebase'
 import ShareLinks from '@/components/Share/ShareLinks'
+import { useRouter } from 'next/router'
 
 
 
@@ -79,6 +80,8 @@ export default function FormModal() {
   const [loading, setLoading] = useState(false)
   const [buttonText, setButtonText] = useState('Submit')
 
+  const router = useRouter()
+
   function handleSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
@@ -103,7 +106,8 @@ export default function FormModal() {
       .finally(() => {
         setLoading(false)
         setButtonText("We'll send the matches soon to your inbox!")
-        setWaitlistForm(2)
+        setWaitlistForm(0)
+        router.push('/share')
       })
 
     setTimeout(() => {

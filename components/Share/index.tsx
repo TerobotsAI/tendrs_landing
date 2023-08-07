@@ -50,16 +50,19 @@ const ShareNow = () => {
                                 No Spam, No Data Sharing. Your Privacy is our priority.
                             </p>
                         </div>
-                        <Button
-                            link='/'
-                            variant='secondary'
-                            className='text-white/80 hover:text-white/100 mx-auto'
-                            title='Back to Home'
-                            size='lg'
-                            icon={
+                        <div
+                            className='mx-auto w-full text-center'
+                        >
+                            <Link
+                                href='/'
+                                type="button" className="inline-flex justify-center items-center space-x-2 focus:border font-semibold rounded-lg px-5 py-3 leading-5 text-sm focus:border-white/70 bg-transparent text-white mx-auto">
                                 <ArrowUturnLeftIcon className='w-4 h-4 mr-2' />
-                            }
-                        ></Button>
+                                <p>
+                                    Back to home
+                                </p>
+                            </Link>
+                        </div>
+
 
                     </div>
                 </div>
