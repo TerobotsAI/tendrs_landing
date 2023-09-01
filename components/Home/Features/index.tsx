@@ -1,99 +1,64 @@
-import {
-  ArrowTrendingUpIcon,
-  ClockIcon,
-  SparklesIcon,
-  XCircleIcon,
-} from '@heroicons/react/24/solid'
-import Feature from './Feature'
+import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
 
-const data = [
+const features = [
   {
-    id: 1,
-    title: 'Grow your Business 10x Faster',
-    icon: (
-      <ArrowTrendingUpIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Grow Business',
-    image: '/features/growth.png',
+    name: 'Push to deploy',
     description:
-      'With trusted profile verifications & AI driven client, vendor matchmakings, get automatically connected to the right clients & vendors to grow 10x for your business',
+      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
+    href: '#',
+    icon: CloudArrowUpIcon,
   },
   {
-    id: 2,
-    title: 'Save time & resource costs',
-    icon: (
-      <ClockIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Save Time',
-    image: '/features/save-time.png',
+    name: 'SSL certificates',
     description:
-      'Lead time of finding the leads and contacting them or sending emails can be reduced. You can start a business even with a minimal sales team at hand.',
-  },
-
-  {
-    id: 3,
-    title: 'Reduce Spam & Protect your privacy',
-    icon: (
-      <XCircleIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Zero Spam',
-    image: '/features/privacy.png',
-    description:
-      'No need to look for additional database, cold calling or Spaming inboxes , sending inmails to clients. just add your requirements and AI will do the magic of identifying the suitable matches and sends meeting requests at the time selected by you.',
+      'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
+    href: '#',
+    icon: LockClosedIcon,
   },
   {
-    id: 4,
-    title: 'Turn offline meetings into prospects',
-    icon: (
-      <SparklesIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'High Conversion',
-    image: '/features/meetings.png',
+    name: 'Simple queues',
     description:
-      'Instead of sharing visiting cards, use Tendrs.ai to quicky connect and also identify if they are your potential clients or vendors',
+      'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
+    href: '#',
+    icon: ArrowPathIcon,
   },
 ]
 
 export default function Features() {
   return (
-    <>
-      <div className='dark' id='benefits'>
-        <div className='relative overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
-          <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
-            <div className='text-center'>
-              <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
-                Benefits of using Tendrs AI
-              </h1>
-              {/* <div className='flex justify-center gap-2 py-5'>
-                <Chip
-                  group
-                  icon={<SparklesIcon className='w-5 h-5 text-white' />}
-                  title='Marketing'
-                  variant='secondary'
-                />
-                <Chip
-                  group
-                  icon={<ArrowTrendingUpIcon className='w-5 h-5 text-white' />}
-                  title='Grow Business'
-                  variant='secondary'
-                />
-                <Chip
-                  group
-                  icon={<XCircleIcon className='w-5 h-5 text-white' />}
-                  title='No Span'
-                  variant='secondary'
-                />
-              </div> */}
-            </div>
-            {data.map((item) => (
-              <Feature
-                key={item.id}
-                data={item}
-              />
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:text-center">
+          <span className="inline-flex items-center rounded-full bg-accent-500/10 px-4 py-2 text-sm text-accent-500 uppercase font-bold ring-1 ring-inset ring-accent-600/10">
+            Features
+          </span>          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
+            Explore our amazing features
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Join us to transform your networking experience. Revolutionize how you connect and grow using AI.
+          </p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.name} className="flex flex-col">
+                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <feature.icon className="h-5 w-5 flex-none text-accent-600" aria-hidden="true" />
+                  {feature.name}
+                </dt>
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto">{feature.description}</p>
+                  <p className="mt-6">
+                    <a href={feature.href} className="text-sm font-semibold leading-6 text-accent-600">
+                      Learn more <span aria-hidden="true">→</span>
+                    </a>
+                  </p>
+                </dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
-    </>
+    </div>
   )
 }

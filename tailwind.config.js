@@ -15,13 +15,12 @@ export default {
 
     // Or if using `src` directory:
   ],
-  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'radial-border': 'radial-gradient(#F9FAFB 0%, transparent 60%)',
-        'radial-gradient':
-          'radial-gradient(circle at center, var(--tw-gradient-stops))',
+      fontSize: {
+        '2.5xl': ['1.75rem', '2.5rem'],
+        '4.5xl': ['2.5rem', '3rem'],
+        '5.5xl': ['3.5625rem', '4rem'],
       },
       colors: {
         accent: {

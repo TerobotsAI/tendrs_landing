@@ -4,6 +4,7 @@ import FAQs from '@/components/Home/FAQs'
 import Features from '@/components/Home/Features'
 import Hero from '@/components/Home/Hero'
 import HowItWorks from '@/components/Home/HowItWorks'
+import LogoCloud from '@/components/Home/LogoCloud'
 import Stats from '@/components/Home/Stats'
 import WaitlistForm from '@/components/Home/WaitlistForm'
 import Footer from '@/components/common/Footer'
@@ -15,12 +16,13 @@ const HomePage = () => {
         <>
             <Navbar />
             <Hero />
-            <WaitlistForm />
-            <About />
-            <HowItWorks />
-            <Differences />
+            <LogoCloud />
+            {/* <WaitlistForm /> */}
+            {/* <About /> */}
+            {/* <HowItWorks /> */}
+            {/* <Differences /> */}
             <Features />
-            <Stats />
+            {/* <Stats /> */}
             <FAQs />
             <Footer />
         </>
