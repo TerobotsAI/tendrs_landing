@@ -1,197 +1,95 @@
-import { Fragment, useState } from 'react'
-import { Transition } from '@headlessui/react'
-import Button from '../Base/Button'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useSetAtom } from 'jotai'
-import { XMarkIcon } from '@heroicons/react/24/solid'
-import { Bars3Icon } from '@heroicons/react/20/solid'
-import { WaitlistFormAtom } from '../Home/WaitlistForm/FormModal'
+import { useState } from 'react'
+import { Dialog } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
+const navigation = [
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' },
+]
 
 export default function Navbar() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false)
-  const setWaitlistFormOpen = useSetAtom(WaitlistFormAtom)
-  // Menu items array to populate both desktop and mobile links
-  const menuItems = [
-    {
-      name: 'Home',
-      url: '#',
-    },
-    {
-      name: 'About',
-      url: '#about',
-    },
-    {
-      name: 'How it works',
-      url: '#how-it-works',
-    },
-    {
-      name: 'Benefits',
-      url: '#benefits',
-    },
-
-    {
-      name: 'FAQs',
-      url: '#faqs',
-    },
-
-  ]
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <>
-      {/* Main Header Section: Simple with Actions Alternate */}
-      <div className='sticky top-0 z-10'>
-        <div className='text-gray-100 bg-slate-950/60 backdrop-blur-lg after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
-          {/* Main Header */}
-          <header
-            id='page-header'
-            className='relative flex flex-none items-center py-8'>
-            {/* Main Header Content */}
-            <div className='flex text-center items-center justify-between container xl:max-w-7xl mx-auto px-4 lg:px-8'>
-              {/* Left Section */}
-              <div className='flex items-center gap-6'>
-                {/* Logo */}
-                <Link
-                  href='/'
-                  className='group inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300'>
-                  <Image
-                    src='/Logo.svg'
-                    height={40}
-                    width={150}
-                    className='h-10'
-                    alt='Tendrs Logo'
-                  />
-                </Link>
-              </div>
-              <nav className='hidden lg:block space-x-3 md:space-x-6 bg-white/5 px-6 py-2 rounded-full border border-slate-700'>
-                {menuItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.url}
-                    className='text-sm font-semibold text-gray-900 hover:text-purple-600 dark:text-gray-100 dark:hover:text-purple-400'>
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-              </nav>
-              {/* Right Section */}
-              <div className='flex items-center'>
-                {/* Actions */}
-                <div className='flex items-center justify-center gap-2'>
-                  <Button
-                    size='sm'
-                    title='Join the waitlist'
-                    onClick={() => {
-                      setWaitlistFormOpen(1)
-                      setMobileNavOpen(false)
-                    }}
-
-                  />
-                </div>
-                {/* END Actions */}
-                {/* Open Mobile Navigation */}
-                <div className='lg:hidden ml-3'>
-                  <button
-                    onClick={() => setMobileNavOpen(true)}
-                    type='button'
-                    className='inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-3 py-2 leading-5 text-sm border-gray-200 bg-white text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700'
-                    aria-controls='tkMobileNav'>
-
-                    <Bars3Icon className='inline-block w-5 h-5 -mx-0.5' />
-                  </button>
-                </div>
-                {/* END Open Mobile Navigation */}
-              </div>
-              {/* END Right Section */}
-            </div>
-            {/* END Main Header Content */}
-            {/* Mobile Navigation */}
-            <Transition
-              as={Fragment}
-              show={mobileNavOpen}
-              enter='transition ease-out duration-200'
-              enterFrom='opacity-0 scale-50'
-              enterTo='opacity-100 scale-100'
-              leave='transition ease-in duration-150'
-              leaveFrom='opacity-100 scale-100'
-              leaveTo='opacity-0 scale-50'>
-              <nav
-                id='tkMobileNav'
-                className='absolute inset-0 h-max m-4 rounded-lg z-50 overflow-auto origin-top-right bg-white/95 shadow-lg sm:container sm:mx-auto lg:hidden dark:bg-slate-950'
-                tabIndex={-1}
-                aria-labelledby='tkMobileNavLabel'
-                aria-modal='true'
-                role='dialog'>
-                <div className='flex items-center justify-between py-6 p-6'>
-                  {/* Logo */}
-                  <a
-                    id='tkMobileNavLabel'
-                    href='#'
-                    className='group inline-flex items-center justify-start space-x-2 font-bold text-lg tracking-wide text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300'>
-                    <Image
-                      src='/Logo.svg'
-                      height={40}
-                      width={150}
-                      className='h-10'
-                      alt='Tendrs Logo'
-                    />
-                  </a>
-                  {/* END Logo */}
-                  {/* Close Mobile Navigation */}
-                  <button
-                    onClick={() => setMobileNavOpen(false)}
-                    type='button'
-                    className='inline-flex justify-center items-center space-x-2 border font-semibold rounded-lg px-3 py-2 leading-5 text-sm border-gray-200  text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300 focus:ring-opacity-25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600 dark:focus:ring-opacity-40 dark:active:border-gray-700'>
-
-                    <XMarkIcon className='inline-block w-5 h-5 -mx-0.5' />
-                  </button>
-                  {/* END Close Mobile Navigation */}
-                </div>
-                <div className='h-px bg-gray-200/75 dark:bg-gray-700/75' />
-                <nav className='flex flex-col gap-2 px-6 py-5'>
-                  {menuItems.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.url}
-                      className='py-1 text-sm font-semibold text-gray-900 hover:text-purple-600 dark:text-gray-100 dark:hover:text-purple-400'>
-                      <span>{item.name}</span>
-                    </a>
-                  ))}
-                </nav>
-                <div className='h-px bg-gray-200/75 dark:bg-gray-700/75' />
-                <div className='flex flex-col gap-2 p-6 sm:flex-row'>
-                  <Button
-                    size='sm'
-                    title='Join the waitlist'
-                    onClick={() => {
-                      setWaitlistFormOpen(1)
-                      setMobileNavOpen(false)
-                    }}
-                  />
-                </div>
-              </nav>
-            </Transition>
-            {/* END Mobile Navigation */}
-            {/* Mobile Navigation Backdrop */}
-            <Transition
-              as={Fragment}
-              show={mobileNavOpen}
-              enter='transition ease-out duration-200'
-              enterFrom='opacity-0'
-              enterTo='opacity-100'
-              leave='transition ease-in duration-150'
-              leaveFrom='opacity-100'
-              leaveTo='opacity-0'>
-              <div
-                onClick={() => setMobileNavOpen(false)}
-                className='absolute inset-0 h-screen z-40 bg-gray-900 bg-opacity-20 backdrop-blur-sm will-change-auto dark:bg-opacity-80 lg:hidden'
-              />
-            </Transition>
-            {/* END Mobile Navigation Backdrop */}
-          </header>
-          {/* END Main Header */}
+    <header className="bg-white">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Tendrs.ai</span>
+            <img className="h-10 w-auto" src="/Logo-dark.svg" alt="" />
+          </a>
         </div>
-      </div>
-      {/* END Main Header Section: Simple with Actions Alternate */}
-    </>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
+          {navigation.map((item) => (
+            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              {item.name}
+            </a>
+          ))}
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Log in <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className="fixed inset-0 z-10" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-8 w-auto"
+                src='/Logo-dark.svg'
+                alt=""
+              />
+            </a>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="py-6">
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+    </header>
   )
 }

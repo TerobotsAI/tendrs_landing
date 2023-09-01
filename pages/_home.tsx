@@ -2,6 +2,7 @@ import About from '@/components/Home/About'
 import Differences from '@/components/Home/Differences'
 import FAQs from '@/components/Home/FAQs'
 import Features from '@/components/Home/Features'
+import Hero from '@/components/Home/Hero'
 import HowItWorks from '@/components/Home/HowItWorks'
 import Stats from '@/components/Home/Stats'
 import WaitlistForm from '@/components/Home/WaitlistForm'
@@ -13,6 +14,7 @@ const HomePage = () => {
     return (
         <>
             <Navbar />
+            <Hero />
             <WaitlistForm />
             <About />
             <HowItWorks />
