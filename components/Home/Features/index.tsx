@@ -1,3 +1,4 @@
+import Chip from '@/components/Base/Chip'
 import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
 
 const features = [
@@ -29,9 +30,8 @@ export default function Features() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <span className="inline-flex items-center rounded-full bg-accent-500/10 px-4 py-2 text-sm text-accent-500 uppercase font-bold ring-1 ring-inset ring-accent-600/10">
-            Features
-          </span>          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
+          <Chip title="Features" />
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
             Explore our amazing features
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">

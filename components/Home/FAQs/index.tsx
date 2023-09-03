@@ -1,4 +1,3 @@
-import Chip from '../../Base/Chip'
 import FAQ from './FAQ'
 
 const faqs = [
@@ -36,27 +35,21 @@ export default function FAQs() {
   return (
     <>
       {/* FAQ Section: To The Side */}
-      <div id='faqs' className='relative py-10 overflow-hidden bg-white after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
+      <div id='faqs' className='relative py-10'>
         <div className='lg:flex space-y-16 lg:justify-between lg:space-x-8 lg:space-y-0 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Heading */}
-          <div className='text-center lg:text-left flex-1'>
-            <Chip
-              variant='secondary'
-              title='We Answer'
-              className='mb-4 mx-auto lg:mx-0'
-              group
-            />
-            <h2 className='text-4xl lg:text-5xl font-black text-black mb-4 dark:text-white'>
-              FAQs
-            </h2>
-            <h3 className='text-xl leading-relaxed font-medium text-gray-700 dark:text-gray-300'>
-              Things we often get asked.
-            </h3>
+          <div className='flex-1 prose'>
+            <h1>
+              Frequently Asked Questions
+            </h1>
+            <p>
+              Join us to transform your networking experience. Revolutionize how you connect and grow.
+            </p>
           </div>
           {/* END Heading */}
 
           {/* FAQ */}
-          <dl className="space-y-6 divide-y flex-[2] divide-white/20">
+          <dl className="space-y-6 divide-y flex-[2] divide-gray-300">
             {faqs.map((faq, idx) => (
               <FAQ key={idx} faq={faq} />
             ))}
