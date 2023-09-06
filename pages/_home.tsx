@@ -1,4 +1,5 @@
 import About from '@/components/Home/About'
+import CTA from '@/components/Home/CTA'
 import DetailedFeatures from '@/components/Home/DetailedFeatures'
 import Differences from '@/components/Home/Differences'
 import FAQs from '@/components/Home/FAQs'
@@ -25,6 +26,7 @@ const HomePage = () => {
             <Features />
             <DetailedFeatures />
             {/* <Stats /> */}
+            <CTA />
             <FAQs />
             <Footer />
         </>
