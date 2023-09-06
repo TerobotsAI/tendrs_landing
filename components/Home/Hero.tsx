@@ -1,17 +1,19 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import Chip from "../Base/Chip"
 export default function Hero() {
   return (
     <>
       <div className="relative isolate pt-14">
-        <div className="py-24 sm:py-32 overflow-y-hidden lg:pb-40 max-h-[1100px] bg-gradient-to-t from-accent-500 via-accent-100 to-white">
+        <div className="py-24 sm:py-32 overflow-y-hidden lg:pb-40 max-h-[900px] md:max-h-[1200px] bg-gradient-to-t from-accent-500 via-accent-100 to-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-5xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-slate-800 md:text-5.5xl">
-                Let your clients and vendors find you faster
+            <div className="mx-auto max-w-4xl text-center">
+              <Chip title='Beta Release' className="mb-4" />
+              <h1 className="text-4xl font-bold text-slate-800 md:text-5xl">
+                Unleash growth with seamless AI-driven B2B matchmaking
               </h1>
-              <p className="mt-8 text-2xl md:text-xl leading-8 text-gray-600">
+              <p className="mt-8 text-lg md:text-xl leading-8 text-gray-600">
                 Elevate Your Business Growth with AI-Driven Meetings and Transformative Connections
               </p>
               <div className="mt-14 flex items-center justify-center gap-x-6">
@@ -21,13 +23,13 @@ export default function Hero() {
               </div>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 lg:-m-4">
+              <div className="-m-3 xl:-m-8">
                 <Image
                   src="/Default.png"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
-                  className="rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+                  className="rounded-lg md:rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 />
               </div>
             </div>

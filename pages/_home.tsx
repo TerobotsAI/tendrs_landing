@@ -1,4 +1,5 @@
 import About from '@/components/Home/About'
+import DetailedFeatures from '@/components/Home/DetailedFeatures'
 import Differences from '@/components/Home/Differences'
 import FAQs from '@/components/Home/FAQs'
 import Features from '@/components/Home/Features'
@@ -16,12 +17,13 @@ const HomePage = () => {
         <>
             <Navbar />
             <Hero />
-            <LogoCloud />
+            {/* <LogoCloud /> */}
             {/* <WaitlistForm /> */}
             {/* <About /> */}
             {/* <HowItWorks /> */}
             {/* <Differences /> */}
             <Features />
+            <DetailedFeatures />
             {/* <Stats /> */}
             <FAQs />
             <Footer />

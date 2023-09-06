@@ -1,5 +1,5 @@
 import Chip from '@/components/Base/Chip'
-import { IconRobot, IconClock, Icon24Hours, IconScissors, IconShieldCheck, IconLockAccess } from '@tabler/icons-react'
+import { IconRobot, IconClock, Icon24Hours, IconShieldCheck, IconLockAccess, IconChartLine, IconPointerStar } from '@tabler/icons-react'
 import Feature from './Feature'
 
 const features = [
@@ -17,15 +17,15 @@ const features = [
   },
   {
     id: 3,
-    name: "24/7 Accessibility",
+    name: "Get 100% qualified leads",
     description: "Connect with partners at any time, thanks to our AI's constant availability.",
-    icon: Icon24Hours,
+    icon: IconPointerStar,
   },
   {
     id: 4,
-    name: "Tailored Recommendations",
-    description: "Personalized suggestions align with your industry and goals, enhancing opportunities.",
-    icon: IconScissors,
+    name: "Find Growing Startups",
+    description: "Poersnalized suggestions align with your industry and goals, enhancing opportunities.",
+    icon: IconChartLine,
   },
   {
     id: 5,

@@ -5,6 +5,7 @@ interface FeatureProps {
     name: string;
     icon: React.ElementType;
     description: string;
+    centered?: boolean
 }
 
 const colors = [
@@ -18,23 +19,36 @@ const colors = [
 
 ]
 
-const Feature: React.FC<FeatureProps> = ({ id, name, icon, description }) => {
+const Feature: React.FC<FeatureProps> = ({ id, name, icon, description, centered = true }) => {
     return (
-        <div key={name} className="flex flex-col">
-            <div className="flex flex-col items-center gap-8 leading-7 text-gray-900">
+        <div key={name} className="flex flex-col flex-1">
+            <div className={
+                clsx(
+                    "flex flex-col gap-4 text-gray-900",
+                    centered ? "items-center md:gap-8" : "items-start md:gap-6"
+                )
+            }>
                 <div
                     className={
                         clsx(
-                            'p-4 rounded-xl',
+                            'p-3 md:p-4 rounded-xl',
                             colors[id - 1 % colors.length]
                         )
                     }
 
 
-                >{React.createElement(icon, { className: "h-8 w-8 flex-none text-white", 'aria-hidden': true })}</div>
-                <hr className='h-px w-full bg-gray-400' />
-                <div className="mt-4 text-center space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-800 ">{name}</h3>
+                >{React.createElement(icon, { className: "w-6 h-6 aspect-1 flex-none text-white", 'aria-hidden': true })}</div>
+                {
+                    centered ?
+                        (<hr className='hidden lg:block h-px w-full bg-gray-400' />)
+                        : null
+                }
+                <div className={
+                    clsx(
+                        "mt-4 space-y-4",
+                        centered ? "text-center" : "text-left"
+                    )}>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 ">{name}</h3>
                     <p className="flex-auto text-gray-600">{description}</p>
                 </div>
             </div>
