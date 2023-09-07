@@ -2,26 +2,26 @@
 import Link from "next/link"
 import Image from "next/image"
 import Chip from "../Base/Chip"
-import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas'
+// import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas'
 
 
 export default function Hero() {
-  const { rive, RiveComponent } = useRive({
-    src: '/hero.riv',
-    autoplay: true,
-    layout: Layout.new({
-      fit: Fit.Cover,
-      maxY: 900,
-      maxX: 900,
-      minX: 0,
-      minY: 0,
-    }),
-  })
+  // const { rive, RiveComponent } = useRive({
+  //   src: '/hero.riv',
+  //   autoplay: true,
+  //   layout: Layout.new({
+  //     fit: Fit.Cover,
+  //     maxY: 900,
+  //     maxX: 900,
+  //     minX: 0,
+  //     minY: 0,
+  //   }),
+  // })
 
   return (
     <>
       <div className="relative isolate pt-14">
-        <div className="py-14 sm:pt-10 pb-24 overflow-y-hidden bg-gradient-to-t from-accent-500 via-accent-100 to-white">
+        <div className="py-14 sm:py-24 overflow-y-hidden lg:pb-40 max-h-[900px] md:max-h-[1200px] bg-gradient-to-t from-accent-500 via-accent-100 to-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
               <Chip title='Beta Release' className="mb-4" important />
@@ -38,18 +38,18 @@ export default function Hero() {
               </div>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-3 xl:-m-8 -mt-14">
-                <RiveComponent
+              <div className="-m-3 xl:-m-8">
+                {/* <RiveComponent
 
-                  className="w-full -mt-12 -translate-y-11 max-h-screen flex items-start pb-10 rounded-lg md:rounded-xl"
-                />
-                {/* <Image
-                  src="/Default.png"
+                  className="w-full -translate-y-11 max-h-screen flex items-start pb-10 rounded-lg md:rounded-xl"
+                /> */}
+                <Image
+                  src="/Default.webp"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
                   className="rounded-lg md:rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-                /> */}
+                />
               </div>
             </div>
           </div>
