@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@rive-app/react-canvas": "^4.2.1",
     "@sanity/client": "^6.4.0",
     "@tabler/icons-react": "^2.32.0",
     "@types/node": "20.4.4",
