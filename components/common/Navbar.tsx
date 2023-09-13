@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const navigation = [
   {
@@ -20,7 +21,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Tendrs.ai</span>
-            <img className="h-10 w-auto" src="/Logo-dark.svg" alt="" />
+            <Image height={40} width={200} className="h-10 w-auto" src="/Logo-dark.svg" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -52,7 +53,9 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              <Image
+                height={32}
+                width={150}
                 className="h-8 w-auto"
                 src='/Logo-dark.svg'
                 alt=""
