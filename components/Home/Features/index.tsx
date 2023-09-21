@@ -1,99 +1,69 @@
-import {
-  ArrowTrendingUpIcon,
-  ClockIcon,
-  SparklesIcon,
-  XCircleIcon,
-} from '@heroicons/react/24/solid'
+import Chip from '@/components/Base/Chip'
+import { IconRobot, IconClock, Icon24Hours, IconShieldCheck, IconLockAccess, IconChartLine, IconPointerStar } from '@tabler/icons-react'
 import Feature from './Feature'
 
-const data = [
+const features = [
   {
     id: 1,
-    title: 'Grow your Business 10x Faster',
-    icon: (
-      <ArrowTrendingUpIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Grow Business',
-    image: '/features/growth.png',
-    description:
-      'With trusted profile verifications & AI driven client, vendor matchmakings, get automatically connected to the right clients & vendors to grow 10x for your business',
+    name: "AI-Powered Meetings",
+    description: "Our AI intelligently pairs you with ideal clients and vendors, eliminating manual searches.",
+    icon: IconRobot,
   },
   {
     id: 2,
-    title: 'Save time & resource costs',
-    icon: (
-      <ClockIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Save Time',
-    image: '/features/save-time.png',
-    description:
-      'Lead time of finding the leads and contacting them or sending emails can be reduced. You can start a business even with a minimal sales team at hand.',
+    name: "Effortless Scheduling",
+    description: "Meetings are seamlessly scheduled, avoiding clashes and time-consuming emails.",
+    icon: IconClock,
   },
-
   {
     id: 3,
-    title: 'Reduce Spam & Protect your privacy',
-    icon: (
-      <XCircleIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'Zero Spam',
-    image: '/features/privacy.png',
-    description:
-      'No need to look for additional database, cold calling or Spaming inboxes , sending inmails to clients. just add your requirements and AI will do the magic of identifying the suitable matches and sends meeting requests at the time selected by you.',
+    name: "Get 100% qualified leads",
+    description: "Connect with partners at any time, thanks to our AI's constant availability.",
+    icon: IconPointerStar,
   },
   {
     id: 4,
-    title: 'Turn offline meetings into prospects',
-    icon: (
-      <SparklesIcon className='inline-block w-4 h-4 relative transition ease-out duration-200 group-hover:scale-110 text-white' />
-    ),
-    chipText: 'High Conversion',
-    image: '/features/meetings.png',
-    description:
-      'Instead of sharing visiting cards, use Tendrs.ai to quicky connect and also identify if they are your potential clients or vendors',
+    name: "Find Growing Startups",
+    description: "Poersnalized suggestions align with your industry and goals, enhancing opportunities.",
+    icon: IconChartLine,
   },
-]
+  {
+    id: 5,
+    name: "Secure and Private",
+    description: "Enjoy encrypted communication and secure profiles for utmost data confidentiality.",
+    icon: IconShieldCheck,
+  },
+  {
+    id: 6,
+    name: "Early Access Rewards",
+    description: "Early waitlisters receive free credits on launch, a head start in AI-driven networking.",
+    icon: IconLockAccess,
+  },
+];
+
+
 
 export default function Features() {
   return (
-    <>
-      <div className='dark' id='benefits'>
-        <div className='relative overflow-hidden bg-gradient-to-t from-purple-950/40 via-slate-950 to-slate-950 dark:text-gray-100 after:w-full after:absolute after:bottom-0 after:h-px after:bg-radial-border'>
-          <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32 pb-10'>
-            <div className='text-center'>
-              <h1 className='text-4xl lg:text-5xl leading-normal lg:leading-normal font-black text-black mb-4 dark:text-transparent bg-clip-text bg-gradient-to-t from-slate-300 to-white'>
-                Benefits of using Tendrs AI
-              </h1>
-              {/* <div className='flex justify-center gap-2 py-5'>
-                <Chip
-                  group
-                  icon={<SparklesIcon className='w-5 h-5 text-white' />}
-                  title='Marketing'
-                  variant='secondary'
-                />
-                <Chip
-                  group
-                  icon={<ArrowTrendingUpIcon className='w-5 h-5 text-white' />}
-                  title='Grow Business'
-                  variant='secondary'
-                />
-                <Chip
-                  group
-                  icon={<XCircleIcon className='w-5 h-5 text-white' />}
-                  title='No Span'
-                  variant='secondary'
-                />
-              </div> */}
-            </div>
-            {data.map((item) => (
-              <Feature
-                key={item.id}
-                data={item}
-              />
+    <div className="py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <Chip title="Features" />
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
+            Explore our amazing features
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Join us to transform your networking experience. Revolutionize how you connect and grow using AI.
+          </p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <div className="grid mx-auto max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            {features.map((feature) => (
+              <Feature key={feature.name} {...feature} />
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

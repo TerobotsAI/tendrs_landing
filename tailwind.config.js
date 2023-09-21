@@ -15,16 +15,31 @@ export default {
 
     // Or if using `src` directory:
   ],
-  darkMode: 'class',
   theme: {
     extend: {
-      backgroundImage: {
-        'radial-border': 'radial-gradient(#F9FAFB 0%, transparent 60%)',
-        'radial-gradient':
-          'radial-gradient(circle at center, var(--tw-gradient-stops))',
+      fontSize: {
+        '2.5xl': ['1.75rem', '2.5rem'],
+        '4.5xl': ['2.5rem', '3rem'],
+        '5.5xl': ['3.5625rem', '4rem'],
+      },
+      colors: {
+        accent: {
+          DEFAULT: '#764DCE',
+          50: '#E5DDF6',
+          100: '#D8CDF1',
+          200: '#C0ADE8',
+          300: '#A78DE0',
+          400: '#8F6DD7',
+          500: '#764DCE',
+          600: '#5A31B2',
+          700: '#442586',
+          800: '#2D195A',
+          900: '#170D2E',
+          950: '#0C0718',
+        },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       maxWidth: {
         '8xl': '90rem',

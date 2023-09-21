@@ -1,11 +1,11 @@
 import React from 'react'
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import AOS from 'aos'
-import Head from 'next/head'
 import { useEffect } from 'react'
 import 'aos/dist/aos.css'
+import Head from 'next/head'
 
-const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'] })
+const dm_sans = DM_Sans({ weight: ["400", "500", "700", "400", "500", "700"], subsets: ['latin'], })
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
@@ -39,11 +39,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       {/* <!-- Meta Tags Generated with https://metatags.io --> */}
     </Head>
-    <main
-      id='main'
-      className={
-        plus_jakarta_sans.className + ' bg-slate-950 text-white/90 dark'
-      }>
+    <main id='main' className={dm_sans.className}>
       {children}
     </main>
 

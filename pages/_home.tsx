@@ -1,10 +1,9 @@
-import About from '@/components/Home/About'
-import Differences from '@/components/Home/Differences'
+import CTA from '@/components/Home/CTA'
+import DetailedFeatures from '@/components/Home/DetailedFeatures'
 import FAQs from '@/components/Home/FAQs'
 import Features from '@/components/Home/Features'
+import Hero from '@/components/Home/Hero'
 import HowItWorks from '@/components/Home/HowItWorks'
-import Stats from '@/components/Home/Stats'
-import WaitlistForm from '@/components/Home/WaitlistForm'
 import Footer from '@/components/common/Footer'
 import Navbar from '@/components/common/Navbar'
 import React from 'react'
@@ -13,12 +12,11 @@ const HomePage = () => {
     return (
         <>
             <Navbar />
-            <WaitlistForm />
-            <About />
-            <HowItWorks />
-            <Differences />
+            <Hero />
             <Features />
-            <Stats />
+            <HowItWorks />
+            <DetailedFeatures />
+            <CTA />
             <FAQs />
             <Footer />
         </>

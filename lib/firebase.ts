@@ -1,9 +1,11 @@
 // Import the functions you need from the SDKs you need
+// import { collection } from '@firebase/firestore'
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
+// import { getAnalytics } from 'firebase/analytics'
 import { getFirestore } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { getStorage } from 'firebase/storage'
+// import { getDocs } from 'firebase/firestore'
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -32,3 +34,16 @@ export const storage = getStorage()
 export default app
 
 // access firestore
+
+// export const getCollection = async (name: any) => {
+//   const collectionRef = collection(db, name)
+//   const querySnapshot = await getDocs(collectionRef)
+//   const data = querySnapshot.docs.map((doc: any) => ({
+//     id: doc.id,
+//     ...doc.data(),
+//   }))
+//   console.log(data)
+//   return data
+// }
+
+// console.log(getCollection('customers'))
