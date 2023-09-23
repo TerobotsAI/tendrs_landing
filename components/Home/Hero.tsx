@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="py-14 sm:py-24 overflow-y-hidden lg:pb-40 max-h-[900px] md:max-h-[1200px] bg-gradient-to-t from-accent-500 via-accent-100 to-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
-              <Chip title='Beta Release' className="mb-4" important />
+              <Chip title='AI match-making' className="mb-4" />
               <h1 className="text-4xl font-bold text-slate-800 md:text-5xl">
                 Unleash growth with seamless AI-driven B2B matchmaking
               </h1>

@@ -6,10 +6,12 @@ import Image from 'next/image'
 
 const navigation = [
   {
-    name: 'Features', href: '#faqs'
+    name: 'Features', href: '#features'
   },
-  { name: 'FAQs', href: '#' },
-  { name: 'Company', href: '#' },
+  {
+    name: "How it works", href: "#how-it-works"
+  },
+  { name: 'FAQs', href: '#faqs' },
 ]
 
 export default function Navbar() {

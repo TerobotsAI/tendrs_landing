@@ -50,7 +50,7 @@ const HowItWorks = () => {
   return (
     <>
 
-      <div className="py-24">
+      <div id="how-it-works" className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Chip title="Features" />
