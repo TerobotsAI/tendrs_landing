@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="py-14 sm:py-24 overflow-y-hidden lg:pb-40 max-h-[900px] md:max-h-[1200px] bg-gradient-to-t from-accent-500 via-accent-100 to-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
-              <Chip title='Beta Release' className="mb-4" important />
+              <Chip title='AI match-making' className="mb-4" />
               <h1 className="text-4xl font-bold text-slate-800 md:text-5xl">
                 Unleash growth with seamless AI-driven B2B matchmaking
               </h1>
@@ -32,7 +32,7 @@ export default function Hero() {
                 Elevate Your Business Growth with AI-Driven Meetings and Transformative Connections
               </p>
               <div className="mt-14 flex items-center justify-center gap-x-6">
-                <Link href="#" className="inline-flex justify-center items-center space-x-2 border font-semibold rounded-xl px-6 py-3 leading-6 border-accent-700 bg-accent-500 text-white hover:text-white hover:bg-accent-600 hover:border-accent-600 focus:ring focus:ring-accent-400 focus:ring-opacity-50 active:bgexpoe-700 active:border-accent-700 dark:focus:ring-accent-400 dark:focus:ring-opacity-90">
+                <Link href="https://app.tendrs.ai/" className="inline-flex justify-center items-center space-x-2 border font-semibold rounded-xl px-6 py-3 leading-6 border-accent-700 bg-accent-500 text-white hover:text-white hover:bg-accent-600 hover:border-accent-600 focus:ring focus:ring-accent-400 focus:ring-opacity-50 active:bgexpoe-700 active:border-accent-700 dark:focus:ring-accent-400 dark:focus:ring-opacity-90">
                   Get Started
                 </Link>
               </div>
