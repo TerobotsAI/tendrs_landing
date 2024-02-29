@@ -4,6 +4,9 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Button } from '../ui/button'
+import useScrollPosition from '@/hooks/useScrollPosition'
+import { cn } from '@/lib/utils'
 
 const navigation = [
   {
@@ -18,10 +21,17 @@ const navigation = [
 ]
 
 export default function Navbar() {
+  const scrollPos = useScrollPosition();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white">
+    <header className={
+      cn(
+        "sticky top-0 z-50 bg-accent text-white transition-all duration-300 ease-in-out",
+        scrollPos > 0 && "bg-white shadow-lg text-slate-800"
+      )
+    }>
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -32,8 +42,12 @@ export default function Navbar() {
             <Image
               height={40}
               width={200}
-              className="h-10 w-auto"
-              src="/Logo-dark.svg"
+              className="h-8 w-auto"
+              src={
+                scrollPos > 0
+                  ? '/brand/new-logo.svg'
+                  : '/brand/new-logo-white.svg'
+              }
               alt=""
             />
           </a>
@@ -41,7 +55,7 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -53,19 +67,24 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm font-semibold leading-6"
             >
               {item.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            href="https://app.tendrs.ai/"
-            className="text-sm font-semibold leading-6 text-gray-900"
+          <Button
+            size='sm'
+            className={
+              cn(
+                "text-accent bg-white",
+                scrollPos > 0 && "bg-accent text-white"
+              )
+            }
           >
-            Get Started <span aria-hidden="true">&rarr;</span>
-          </Link>
+            <Link href="https://app.tendrs.ai">Get Started</Link>
+          </Button>
         </div>
       </nav>
       <Dialog
@@ -83,7 +102,7 @@ export default function Navbar() {
                 height={32}
                 width={150}
                 className="h-8 w-auto"
-                src="/Logo-dark.svg"
+                src="/brand/new-logo.svg"
                 alt=""
               />
             </a>
@@ -110,12 +129,9 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="py-6">
-                <Link
-                  href="https://app.tendrs.ai/"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Get Started
-                </Link>
+                <Button>
+                  <Link href="https://app.tendrs.ai">Get Started</Link>
+                </Button>
               </div>
             </div>
           </div>
