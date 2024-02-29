@@ -6,9 +6,8 @@ import Hero from '@/components/Home/Hero'
 import HowItWorks from '@/components/Home/HowItWorks'
 import Footer from '@/components/common/Footer'
 import Navbar from '@/components/common/Navbar'
-import React from 'react'
 
-const HomePage = () => {
+const Page = () => {
     return (
         <>
             <Navbar />
@@ -23,4 +22,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage
+export default Page

@@ -1,9 +1,10 @@
 import React from 'react'
-import Button from '../Base/Button'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUturnLeftIcon, PaperClipIcon } from '@heroicons/react/24/solid'
+import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid'
 import ShareLinks from './ShareLinks'
+
+
 const ShareNow = () => {
     return (
         <>

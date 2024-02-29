@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import { PaperClipIcon } from '@heroicons/react/24/solid'
