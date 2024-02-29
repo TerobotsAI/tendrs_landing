@@ -8,18 +8,18 @@ import Footer from '@/components/common/Footer'
 import Navbar from '@/components/common/Navbar'
 
 const Page = () => {
-    return (
-        <>
-            <Navbar />
-            <Hero />
-            <Features />
-            <HowItWorks />
-            <DetailedFeatures />
-            <CTA />
-            <FAQs />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Features />
+      <HowItWorks />
+      <DetailedFeatures />
+      <CTA />
+      <FAQs />
+      <Footer />
+    </>
+  )
 }
 
 export default Page

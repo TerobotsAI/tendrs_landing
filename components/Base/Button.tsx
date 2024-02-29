@@ -57,12 +57,12 @@ const Button = ({
         checkSize(size)
       )}
       href={link}
-      {...props}>
+      {...props}
+    >
       {icon}
-      <p>{title}
-        <span
-          className='block text-xs mt-1'
-        >{subtext}</span>
+      <p>
+        {title}
+        <span className="block text-xs mt-1">{subtext}</span>
       </p>
     </Tag>
   )

@@ -7,12 +7,14 @@ import Image from 'next/image'
 
 const navigation = [
   {
-    name: 'Features', href: '#features'
+    name: 'Features',
+    href: '#features'
   },
   {
-    name: "How it works", href: "#how-it-works"
+    name: 'How it works',
+    href: '#how-it-works'
   },
-  { name: 'FAQs', href: '#faqs' },
+  { name: 'FAQs', href: '#faqs' }
 ]
 
 export default function Navbar() {
@@ -20,11 +22,20 @@ export default function Navbar() {
 
   return (
     <header className="bg-white">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Tendrs.ai</span>
-            <Image height={40} width={200} className="h-10 w-auto" src="/Logo-dark.svg" alt="" />
+            <Image
+              height={40}
+              width={200}
+              className="h-10 w-auto"
+              src="/Logo-dark.svg"
+              alt=""
+            />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -39,18 +50,30 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
               {item.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="https://app.tendrs.ai/" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="https://app.tendrs.ai/"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Get Started <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -60,7 +83,7 @@ export default function Navbar() {
                 height={32}
                 width={150}
                 className="h-8 w-auto"
-                src='/Logo-dark.svg'
+                src="/Logo-dark.svg"
                 alt=""
               />
             </a>
