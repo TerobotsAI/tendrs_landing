@@ -10,13 +10,13 @@ const Chip = ({ title, className, important }: ChipProps) => {
   return (
     <span
       className={clsx(
-        'inline-flex gap-2 items-center rounded-full bg-accent-500/10 px-4 py-2 text-sm text-accent-500 uppercase font-bold ring-1 ring-inset ring-accent-600/10',
+        'inline-flex gap-2 items-center rounded-full bg-accent-600/10 px-4 py-2 text-sm text-accent-800/90 uppercase font-bold ring-1 ring-inset ring-accent-700/40',
         className
       )}
     >
       {important && (
         <svg
-          className="h-3 w-3 fill-accent-500 animate-pulse"
+          className="h-3 w-3 fill-accent animate-pulse"
           viewBox="0 0 6 6"
           aria-hidden="true"
         >

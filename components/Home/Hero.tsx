@@ -3,14 +3,13 @@ import Image from 'next/image'
 import { Button } from '../ui/button'
 
 export default function Hero() {
-
   return (
     <>
       <div className="relative isolate">
         <div className="py-14 sm:py-24 overflow-y-hidden lg:pb-40 max-h-[900px] md:max-h-[1200px] bg-accent">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className='mx-auto text-center'>
-              <div className='bg-accent-500 rounded-full w-fit py-1.5 px-3.5 mx-auto'>
+            <div className="mx-auto text-center">
+              <div className="bg-accent-500 rounded-full w-fit py-1.5 px-3.5 mx-auto">
                 <p className="text-sm text-white font-bold uppercase">
                   Let AI find projects and clients worldwide!
                 </p>
@@ -20,15 +19,14 @@ export default function Hero() {
               </h1>
 
               <p className="mt-3 text-lg md:text-xl leading-8 text-white/60 max-w-3xl mx-auto">
-                Discover and bid on proposals that align with your services, post your needs for competitive bids, verify company details in one place, and explore innovative startups and success stories easily.
+                Discover and bid on proposals that align with your services,
+                post your needs for competitive bids, verify company details in
+                one place, and explore innovative startups and success stories
+                easily.
               </p>
 
               <div className="mt-14 gap-x-6">
-
-                <Button
-                  size='lg'
-                  className='bg-white text-accent'
-                >
+                <Button size="lg" className="bg-white text-accent">
                   <Link href="https://app.tendrs.ai">Get Started</Link>
                 </Button>
               </div>

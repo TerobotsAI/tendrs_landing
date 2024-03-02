@@ -21,17 +21,17 @@ const navigation = [
 ]
 
 export default function Navbar() {
-  const scrollPos = useScrollPosition();
+  const scrollPos = useScrollPosition()
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className={
-      cn(
-        "sticky top-0 z-50 bg-accent text-white transition-all duration-300 ease-in-out",
-        scrollPos > 0 && "bg-white shadow-lg text-slate-800"
-      )
-    }>
+    <header
+      className={cn(
+        'sticky top-0 z-50 bg-accent text-white transition-all duration-300 ease-in-out',
+        scrollPos > 0 && 'bg-white shadow-lg text-slate-800'
+      )}
+    >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -75,13 +75,11 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button
-            size='sm'
-            className={
-              cn(
-                "text-accent bg-white",
-                scrollPos > 0 && "bg-accent text-white"
-              )
-            }
+            size="sm"
+            className={cn(
+              'text-accent bg-white',
+              scrollPos > 0 && 'bg-accent text-white'
+            )}
           >
             <Link href="https://app.tendrs.ai">Get Started</Link>
           </Button>

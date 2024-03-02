@@ -1,20 +1,16 @@
 import Chip from '@/components/Base/Chip'
-import Feature from '../Features/Feature'
-import { IconClock, IconPointerStar } from '@tabler/icons-react'
+import { hyphenate } from '@/lib/utils'
+import { IconCheck } from '@tabler/icons-react'
 import clsx from 'clsx'
+import Image from 'next/image'
 
-interface Props {
+interface DetailedFeatureProps {
   id: number
   image: any
   caption: string
   title: string
   desp: string
-  features: {
-    id: number
-    name: string
-    description: string
-    icon: any
-  }[]
+  features: string[]
 }
 
 const DetailedFeature = ({
@@ -24,15 +20,15 @@ const DetailedFeature = ({
   title,
   desp,
   features
-}: Props) => {
+}: DetailedFeatureProps) => {
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
+    <div className="overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-x-10 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
           <div
             className={clsx(
-              'px-6 lg:px-0 lg:pr-4 lg:pt-4',
-              id % 2 !== 0 ? 'lg:order-first' : 'lg:order-last'
+              'px-6 lg:px-0',
+              id % 2 !== 0 ? 'lg:order-first lg:pr-4' : 'lg:order-last lg:pl-4'
             )}
           >
             <div className="mx-auto lg:mx-0">
@@ -41,22 +37,29 @@ const DetailedFeature = ({
                 <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
                   {title}
                 </h2>
-                <p className="mt-6 text-lg leading-8 text-gray-600">{desp}</p>
+                <p className="mt-4 text-lg leading-8 text-gray-600">{desp}</p>
               </div>
-              <dl className="mt-10 text-base leading-7 text-gray-600 lg:max-w-none flex flex-col sm:flex-row gap-x-4 gap-y-14">
-                {features.map((feature) => (
-                  <Feature centered={false} key={feature.name} {...feature} />
+              <dl className="mt-10 text-base leading-7 text-gray-600 lg:max-w-none flex flex-col gap-y-5">
+                {features.map((feature, key) => (
+                  <div key={key} className='flex items-center gap-4'>
+                    <IconCheck size={20} className='text-secondary-500' />
+                    <p className='text-lg leading-8 text-gray-600'>
+                      {feature}
+                    </p>
+                  </div>
                 ))}
               </dl>
             </div>
           </div>
 
           <div className="relative isolate overflow-hidden bg-accent-500 sm:mx-auto sm:rounded-3xl lg:mx-0 h-full">
-            <img
-              src={image}
-              alt="Product screenshot"
+            <Image
+              height={500}
+              width={500}
+              alt={title}
+              src={`/detailedFeatures/${hyphenate(caption)}.jpg`}
               loading="lazy"
-              className="w-full h-full max-h-[750px] object-cover"
+              className="w-full h-full max-h-[500px] object-cover object-center"
             />
           </div>
         </div>

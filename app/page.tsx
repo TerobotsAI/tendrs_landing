@@ -1,4 +1,6 @@
+import AllInOne from '@/components/Home/All-in-one'
 import CTA from '@/components/Home/CTA'
+import Comparision from '@/components/Home/Comparision'
 import DetailedFeatures from '@/components/Home/DetailedFeatures'
 import FAQs from '@/components/Home/FAQs'
 import Features from '@/components/Home/Features'
@@ -12,9 +14,11 @@ const Page = () => {
     <>
       <Navbar />
       <Hero />
+      <AllInOne />
+      <DetailedFeatures />
+      <Comparision />
       <Features />
       <HowItWorks />
-      <DetailedFeatures />
       <CTA />
       <FAQs />
       <Footer />
