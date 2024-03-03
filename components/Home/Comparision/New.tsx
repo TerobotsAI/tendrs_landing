@@ -1,4 +1,4 @@
-import { IconCheck } from "@tabler/icons-react";
+import { IconCheck } from '@tabler/icons-react'
 
 const features = [
   'Simple, easy, and effortless process',
@@ -9,15 +9,13 @@ const features = [
   'AI-enabled bid mapping for streamlined evaluation',
   'Provides email alerts for bid progress and status changes',
   'Single platform for all tender listings',
-  'Offers a complete database of companies',
-];
+  'Offers a complete database of companies'
+]
 
 const New = () => {
   return (
     <div className="bg-accent ring-slate-900 rounded-xl p-8 ring-1 flex flex-col ">
-      <h3 className="text-white text-3xl font-bold">
-        New Tenders
-      </h3>
+      <h3 className="text-white text-3xl font-bold">New Tenders</h3>
       <hr className="border-slate-500 mt-5 w-40" />
 
       <ul
@@ -31,8 +29,8 @@ const New = () => {
           </li>
         ))}
       </ul>
-    </div >
-  );
-};
+    </div>
+  )
+}
 
-export default New;
+export default New

@@ -1,4 +1,4 @@
-import { IconX } from "@tabler/icons-react";
+import { IconX } from '@tabler/icons-react'
 
 const features = [
   'Lengthy, rigid, and tedious process',
@@ -9,8 +9,8 @@ const features = [
   'Manual evaluation of bids',
   'Lack of email updates and bid tracking',
   'Multiple sites for tender listings',
-  'Absence of a comprehensive company database',
-];
+  'Absence of a comprehensive company database'
+]
 
 const Old = () => {
   return (
@@ -32,7 +32,7 @@ const Old = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Old;
+export default Old

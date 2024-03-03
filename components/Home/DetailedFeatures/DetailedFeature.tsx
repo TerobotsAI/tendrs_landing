@@ -41,11 +41,9 @@ const DetailedFeature = ({
               </div>
               <dl className="mt-10 text-base leading-7 text-gray-600 lg:max-w-none flex flex-col gap-y-5">
                 {features.map((feature, key) => (
-                  <div key={key} className='flex items-center gap-4'>
-                    <IconCheck size={20} className='text-secondary-500' />
-                    <p className='text-lg leading-8 text-gray-600'>
-                      {feature}
-                    </p>
+                  <div key={key} className="flex items-center gap-4">
+                    <IconCheck size={20} className="text-secondary-500" />
+                    <p className="text-lg leading-8 text-gray-600">{feature}</p>
                   </div>
                 ))}
               </dl>

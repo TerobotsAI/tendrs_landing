@@ -1,19 +1,19 @@
-import Chip from "@/components/Base/Chip";
-import New from "./New";
-import Old from "./Old";
+import Chip from '@/components/Base/Chip'
+import New from './New'
+import Old from './Old'
 
 export default function Comparision() {
   return (
     <div className="bg-accent-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
         <div className="mx-auto max-w-2xl text-center">
           <Chip title="Comparision" />
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
             How tendrs is making a difference?
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Here&apos;s how tendrs is changing the way tenders are managed and how it is different from the traditional way of managing tenders.
+            Here&apos;s how tendrs is changing the way tenders are managed and
+            how it is different from the traditional way of managing tenders.
           </p>
         </div>
 
@@ -21,7 +21,13 @@ export default function Comparision() {
           <Old />
           <New />
         </div>
+        <div className="mx-auto max-w-2xl text-center mt-16">
+          <Chip
+            title="Break the norm: Join Tendrs today & start posting your requirements"
+            className="normal-case bg-accent-50 text-accent"
+          />
+        </div>
       </div>
     </div>
-  );
+  )
 }

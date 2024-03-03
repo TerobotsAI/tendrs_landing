@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface ChipProps {
   title: string
@@ -9,7 +9,7 @@ interface ChipProps {
 const Chip = ({ title, className, important }: ChipProps) => {
   return (
     <span
-      className={clsx(
+      className={cn(
         'inline-flex gap-2 items-center rounded-full bg-accent-600/10 px-4 py-2 text-sm text-accent-800/90 uppercase font-bold ring-1 ring-inset ring-accent-700/40',
         className
       )}

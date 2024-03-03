@@ -29,7 +29,7 @@ export default function Navbar() {
     <header
       className={cn(
         'sticky top-0 z-50 bg-accent text-white transition-all duration-300 ease-in-out',
-        scrollPos > 0 && 'bg-white shadow-lg text-slate-800'
+        scrollPos > 100 && 'bg-white shadow-lg text-slate-800'
       )}
     >
       <nav
@@ -44,7 +44,7 @@ export default function Navbar() {
               width={200}
               className="h-8 w-auto"
               src={
-                scrollPos > 0
+                scrollPos > 100
                   ? '/brand/new-logo.svg'
                   : '/brand/new-logo-white.svg'
               }
@@ -76,9 +76,9 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button
             size="sm"
+            variant={scrollPos > 100 ? 'default' : 'secondary'}
             className={cn(
-              'text-accent bg-white',
-              scrollPos > 0 && 'bg-accent text-white'
+              scrollPos > 100 ? '' : 'text-accent bg-white hover:bg-white/80'
             )}
           >
             <Link href="https://app.tendrs.ai">Get Started</Link>
