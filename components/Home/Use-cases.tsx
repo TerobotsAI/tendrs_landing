@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 
-const AllInOne = () => {
+const UseCases = () => {
   return (
     <>
       <div className="overflow-hidden bg-white dark:bg-gray-900 dark:text-gray-100">
@@ -91,4 +91,4 @@ const AllInOne = () => {
   )
 }
 
-export default AllInOne
+export default UseCases

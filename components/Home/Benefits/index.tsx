@@ -1,71 +1,61 @@
 import Chip from '@/components/Base/Chip'
 import {
-  IconRobot,
-  IconClock,
-  Icon24Hours,
-  IconShieldCheck,
-  IconLockAccess,
-  IconChartLine,
-  IconPointerStar
+  IconPointerStar, IconMailBolt,
+  IconMoneybag,
+  IconClipboardCheck,
+  IconReportAnalytics,
+  IconUserSearch
 } from '@tabler/icons-react'
-import Feature from './Feature'
-
-// Reduce marketing email expenses
-// Acquire clients at minimal cost
-// Lower vendor expenses through bids
-// Choose high-quality vendors
-// Efficiently evaluate bids and proposals
-// Prevent inbox spam from multiple vendors
-// Discover top solutions and startups
+import Feature from './Benefit'
 
 const features = [
   {
     id: 1,
     name: 'Reduce marketing email expenses',
     description:
-      'Our AI intelligently pairs you with ideal clients and vendors, eliminating manual searches.',
-    icon: IconRobot
+      'Eliminate the need for extensive email marketing campaigns by providing a centralized platform for client acquisition and vendor selection.',
+    icon: IconMailBolt
   },
   {
     id: 2,
     name: 'Acquire clients at minimal cost',
     description:
-      'Meetings are seamlessly scheduled, avoiding clashes and time-consuming emails.',
-    icon: IconClock
+      "Utilize our robust features to attract clients without significant financial investment, leveraging the platform's ability to connect businesses efficiently.",
+    icon: IconMoneybag
   },
   {
     id: 3,
-    name: 'Lower vendor expenses through bids',
+    name: 'Lower vendor expenses using bids',
     description:
-      "Connect with partners at any time, thanks to our AI's constant availability.",
-    icon: IconPointerStar
+      'Drive down vendor costs by facilitating competitive bidding, allowing businesses to secure services at competitive rates.',
+    icon: IconClipboardCheck
   },
   {
     id: 4,
-    name: 'Choose high-quality vendors',
+    name: 'Choose the best vendors',
     description:
-      'Poersnalized suggestions align with your industry and goals, enhancing opportunities.',
-    icon: IconChartLine
+      'Access a curated pool of verified vendors, ensuring you partner with reputable and reliable businesses for your projects.',
+    icon: IconPointerStar
   },
   {
     id: 5,
     name: 'Efficiently evaluate bids and proposals',
     description:
-      'Enjoy encrypted communication and secure profiles for utmost data confidentiality.',
-    icon: IconShieldCheck
+      "Tendrs' intuitive interface simplifies the process of evaluating bids and proposals, saving time and effort for businesses.",
+    icon: IconReportAnalytics
   },
   {
     id: 6,
-    name: 'Prevent inbox spam from multiple vendors',
+    name: 'Discover top solutions and startups',
     description:
-      'Early waitlisters receive free credits on launch, a head start in AI-driven networking.',
-    icon: IconLockAccess
+      'Explore innovative solutions and emerging startups effortlessly through our comprehensive marketplace, unlocking new opportunities for collaboration and growth.',
+    icon: IconUserSearch
   }
 ]
 
-export default function Features() {
+export default function Benefits() {
   return (
-    <div id="features" className="py-24">
+    <div id="benefits" className="py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Chip title="Benefits" />

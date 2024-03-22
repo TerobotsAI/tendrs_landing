@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-interface FeatureProps {
+interface BenefitProps {
   id: number
   name: string
   icon: React.ElementType
@@ -18,7 +18,7 @@ const colors = [
   'bg-emerald-500'
 ]
 
-const Feature: React.FC<FeatureProps> = ({
+const Benefit: React.FC<BenefitProps> = ({
   id,
   name,
   icon,
@@ -63,4 +63,4 @@ const Feature: React.FC<FeatureProps> = ({
   )
 }
 
-export default Feature
+export default Benefit

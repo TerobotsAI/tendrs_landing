@@ -10,12 +10,12 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   {
-    name: 'Features',
-    href: '#features'
+    name: 'Benefits',
+    href: '#benefits'
   },
   {
-    name: 'How it works',
-    href: '#how-it-works'
+    name: 'Use Cases',
+    href: '#use-cases'
   },
   { name: 'FAQs', href: '#faqs' }
 ]
