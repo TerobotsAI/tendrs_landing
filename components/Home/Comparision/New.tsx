@@ -15,7 +15,7 @@ const features = [
 const New = () => {
   return (
     <div className="bg-accent ring-slate-900 rounded-xl p-8 ring-1 flex flex-col ">
-      <h3 className="text-white text-3xl font-bold">New Tenders</h3>
+      <h3 className="text-white text-3xl font-bold">Tendrs</h3>
       <hr className="border-slate-500 mt-5 w-40" />
 
       <ul

@@ -59,7 +59,7 @@ export default function Benefits() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Chip title="Benefits" />
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4.5xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
             Choosing Tendrs offers clear benefits
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">

@@ -9,8 +9,8 @@ export default function CTA() {
             Get Started with Tendrs.ai today
           </h2>
           <p className="mx-auto mt-6 text-lg leading-8 text-white/70">
-            Start building meaningful relationships with like-minded
-            professionals today.
+            Join Tendrs today and start posting your requirements to discover and
+            bid on proposals that align with your services.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link

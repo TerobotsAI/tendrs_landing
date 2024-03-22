@@ -11,7 +11,7 @@ export default function Hero() {
             <div className="mx-auto text-center">
               <div className="bg-accent-500 rounded-full w-fit py-1.5 px-3.5 mx-auto">
                 <p className="text-sm text-white font-bold uppercase">
-                  Find projects and clients faster
+                  Break the norm: Join Tendrs today & start posting your requirements
                 </p>
               </div>
               <h1 className="mt-6 text-4xl lg:text-5xl font-bold text-white max-w-4xl mx-auto">
@@ -23,6 +23,7 @@ export default function Hero() {
                 post your needs for competitive bids, verify company details in
                 one place, and explore innovative startups and success stories
                 easily.
+
               </p>
 
               <div className="mt-14 gap-x-6">
