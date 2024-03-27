@@ -1,22 +1,90 @@
 [
   {
-    "question": "We are using linkedin sales navigator to find our clients, how is Tendrs different than that?",
-    "answer": "In linkedin you need to post inmail messages to random people with or without knowing what they are looking for, in this you are spending more than 80% of cost to identify the right potential lead. With Tendrs, since every profile will have list of requirements &amp;amp; offerings matches made by AI will be 99.99% accurate and chances of closing deals are very high."
+    "question": "Are traditional tender processes still relevant in today's fast-paced business landscape?",
+    "answer": "Yes, traditional tender processes are still relevant. But, they often involve exhaustive searches through various channels, leading to loads of time and high use of resources for founders."
   },
   {
-    "question": "How is it different to google search?",
-    "answer": "In google search you will find a list of websites and you have to spend more time in identifying the contact, sending a mail with details &amp;amp; they will take time in researching about your credibility and then reply you to fix a meeting, this takes a lot of time in converting a lead. In Tendrs, you can add all your possible details and AI will help you match with right clients and sets up a meeting where you need to discuss the deals and pricing to close it. Moreover, In tendrs, you will be interacting with People who represent the businesses directly."
+    "question": "Is it challenging for founders to access global projects without extensive outreach efforts?",
+    "answer": "Yes, accessing global projects often requires founders to engage in extensive outreach efforts, which can be time-consuming and costly."
   },
   {
-    "question": "Is my personal info safe with Tendrs?",
-    "answer": "It's 100% safe, No contact number or mail id would be shared with anyone, you will be getting only meeting requests which you need to accept or reject. Also, you can keep your profile offline to stop receiving any meeting requests."
+    "question": "Is bid evaluation a complex and time-consuming task for founders?",
+    "answer": "Yes, bid evaluation in traditional tender processes can be complex and time-consuming, often requiring manual assessment of multiple proposals."
   },
   {
-    "question": "Which teams & businesses can use it?",
-    "answer": "Every business can use Tendrs, no need to spend a high price for purchasing Sales tools, CRM, or having a big sales team to start a Business. If you have a company registered you can start using Tendrs to identify clients and start sending your proposals instantly. This platform is for every B2B businesses."
+    "question": "Do founders struggle to receive project opportunities directly without intermediaries?",
+    "answer": "Yes, in traditional tender processes, founders often rely on intermediaries to connect them with project opportunities, leading to delays and inefficiencies."
   },
   {
-    "question": "Can startups & investors also be part of this Tendr platform?",
-    "answer": "Yes, everyone can be part of this platform. We haven't built the models to match investors &amp;amp; startups yet. Soon we will be launching the same."
+    "question": "How can Tendrs revolutionize networking at events through the use of QR codes?",
+    "answer": "Tendrs introduces a novel approach to networking at events by leveraging QR codes. With just a simple exchange of QR codes, individuals can swiftly connect and identify potential clients or vendors. This innovative method streamlines the process, eliminating the need for storing physical business cards or saving contact numbers without engaging further."
+  },
+  {
+    "question": "Is spam a common issue founders face when searching for project opportunities?",
+    "answer": "Yes, founders often encounter spam when searching for project opportunities through traditional channels, leading to frustration and wasted time."
+  },
+  {
+    "question": "Do founders struggle to expand their network effortlessly through traditional tender processes?",
+    "answer": "Yes, expanding their network through traditional tender processes can be challenging for founders, requiring extensive networking efforts and resources."
+  },
+  {
+    "question": "Is posting requirements on LinkedIn/Whatsapp groups an effective way for founders to find clients?",
+    "answer": "While posting requirements on LinkedIn/Whatsapp groups can attract some attention, it often lacks the targeted reach and efficiency founders need to find the right clients."
+  },
+  {
+    "question": "How can Tendrs simplify the procurement process for organizations seeking to acquire laptops or other goods?",
+    "answer": "With Tendrs, the process is streamlined. You simply post your laptop requirements on the platform, and Tendrs' AI matches you with suitable suppliers from around the world. You'll receive bids tailored to your needs without the hassle of extensive outreach. Plus, Tendrs AI tools help you efficiently evaluate bids, saving you time and ensuring you find the best supplier for your organization's needs."
+  },
+  {
+    "question": "Is Tendrs only for large enterprises, or can startups benefit from it too?",
+    "answer": "Tendrs is designed to cater to both startups and enterprises alike. Whether you're a budding startup looking for opportunities to showcase your services or an established enterprise seeking innovative solutions, Tendrs provides a platform for everyone."
+  },
+  {
+    "question": "What is the process for startups to get started on Tendrs?",
+    "answer": "Getting started on Tendrs is simple: Sign up for an account on the Tendrs platform. Complete your startup profile, including your organization details, success stories, and client testimonials. Post your requirements or proposals to attract potential clients. Receive bids from vendors globally and evaluate them to secure contracts."
+  },
+  {
+    "question": "How will startups know if their bids or proposals have been placed successfully?",
+    "answer": "They will receive email notifications confirming the successful placement of their bids or proposals. These notifications ensure that you stay updated on the status of your submissions."
+  },
+  {
+    "question": "If a tender closes, how will we be notified?",
+    "answer": "Tendrs ensures that you are informed promptly via email when a tender you have bid on closes. This notification keeps you informed about the outcome of your bids and allows you to plan your next steps accordingly."
+  },
+  {
+    "question": "Can we expect assistance in navigating the bidding and evaluation process on Tendrs?",
+    "answer": "Absolutely! Tendrs provides comprehensive support throughout the bidding and evaluation process. Our platform offers intuitive features and AI-powered tools to simplify bid evaluation, making the process seamless for startups."
+  },
+  {
+    "question": "Is Tendrs exclusively for tech startups, or can startups from various sectors benefit from it?",
+    "answer": "Tendrs is not limited to any specific sector or industry. Startups from diverse sectors can leverage the platform to showcase their offerings, attract clients, and grow their businesses effortlessly."
+  },
+  {
+    "question": "How does Tendrs ensure the authenticity of bids and proposals submitted?",
+    "answer": "Tendrs verifies the authenticity of bids and proposals through a rigorous screening process. We curate a pool of verified vendors, ensuring that you can trust the integrity of the bids they receive."
+  },
+  {
+    "question": "Can we showcase their success stories on Tendrs?",
+    "answer": "Yes, you can showcase your success stories on Tendrs. Our platform allows you to highlight your achievements, client success stories, and testimonials, enhancing your credibility and attracting potential clients."
+  },
+  {
+    "question": "Is Tendrs suitable for startups/enterprises at different stages of growth, including early-stage startups?",
+    "answer": "Absolutely! Tendrs caters to startups at various stages of growth, providing them with opportunities to expand their clientele, increase visibility, and accelerate their growth trajectory."
+  },
+  {
+    "question": "How does Tendrs contribute to the growth and visibility within its community?",
+    "answer": "Tendrs provides a vibrant community where any startup/enterprise can share reviews, upvote each other, write success stories, and more. By actively participating in this community, they can gain high visibility, receive positive reviews, and discover opportunities for collaboration and growth."
+  },
+  {
+    "question": "Can we see bids placed by other companies?",
+    "answer": "No, only the person/company who has posted the tender can see the bids. This ensures confidentiality and privacy in the bidding process, allowing each company to assess bids without the influence of competitors."
+  },
+  {
+    "question": "Is my info safe with Tendrs?",
+    "answer": "At Tendrs, we prioritize the safety and confidentiality of your information. Rest assured, your contact number or email address will never be shared with any third party. The communication process is streamlined to ensure your privacy remains intact."
+  },
+  {
+    "question": "How will I know when new tenders are posted?",
+    "answer": "You will be notified via email whenever new tenders are posted on Tendrs, ensuring that you receive updates specifically tailored to your preferences and relevance."
   }
 ]
