@@ -15,7 +15,7 @@ interface DetailedFeatureProps {
 
 const DetailedFeature = ({
   id,
-  image,
+  // image,
   caption,
   title,
   desp,
@@ -57,7 +57,8 @@ const DetailedFeature = ({
               alt={title}
               src={`/detailedFeatures/${hyphenate(caption)}.jpg`}
               loading="lazy"
-              className="w-full h-full max-h-[500px] object-cover object-center"
+              draggable={false}
+              className="w-full h-full max-h-[500px] object-cover object-center pointer-events-none select-none"
             />
           </div>
         </div>

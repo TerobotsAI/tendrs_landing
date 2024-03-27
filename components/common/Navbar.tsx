@@ -78,7 +78,7 @@ export default function Navbar() {
             size="sm"
             variant={scrollPos > 100 ? 'default' : 'secondary'}
             className={cn(
-              scrollPos > 100 ? '' : 'text-accent bg-white hover:bg-white/80'
+              scrollPos > 100 ? '' : 'text-accent bg-white hover:bg-accent-500 hover:text-white'
             )}
           >
             <Link href="https://app.tendrs.ai">Get Started</Link>
@@ -127,7 +127,8 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="py-6">
-                <Button>
+                <Button
+                >
                   <Link href="https://app.tendrs.ai">Get Started</Link>
                 </Button>
               </div>

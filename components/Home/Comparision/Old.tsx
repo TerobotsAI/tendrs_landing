@@ -14,8 +14,8 @@ const features = [
 
 const Old = () => {
   return (
-    <div className="bg-white ring-slate-200 rounded-xl p-8 ring-1 flex flex-col">
-      <h3 className="text-slate-900 text-3xl font-bold tracking-tight">
+    <div className="bg-white ring-slate-200 rounded-xl p-4 md:p-6 lg:p-8 ring-1 flex flex-col">
+      <h3 className="text-slate-900 text-2xl lg:text-3xl font-bold tracking-tight">
         Old Tenders
       </h3>
       <hr className="border-slate-600 mt-5 w-40" />
@@ -27,7 +27,7 @@ const Old = () => {
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-3">
             <IconX size={20} stroke={2} className="text-red-500" />
-            <h3 className="text-lg">{feature}</h3>
+            <h3 className="text-base lg:text-lg">{feature}</h3>
           </li>
         ))}
       </ul>
